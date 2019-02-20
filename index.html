@@ -17,7 +17,7 @@
       <nav>
         <img src="./img/logo.png" alt="logo" class="logo">
 
-        
+
         <ul class="nav-links">
           <li><a href="#">Laffytuffy</a></li>
           <li><a href="#">Popular</a></li>
@@ -25,9 +25,9 @@
           <li><a href="#">Users</a></li>
         </ul>
 
-        <form class="search_form" action="chat_submit.js" method="post">
+        <form class="search_form" method="post">
           <input class="search" type="search" placeholder="Search">
-          <button type="submit" name="input_string">Search</button>
+          <button type="submit" name="input_string" onclick ="search()">Search</button>
         </form>
 
         <div class="burger">
@@ -41,15 +41,16 @@
 
     <div class="fourm">
       <div class="post">
-        <form class="entry" type="submit" method="post">
+        <form class="entry" type="text" method="post">
           <div class="output_text_area">
-            <textarea readonly name="output" rows="15" value="" ></textarea>
+            <textarea id="output_text" readonly name="output" rows="15" value="" ></textarea>
           </div>
           <div class="input_area">
             <div class="input_text_area">
-              <textarea class="input_text" name="input" rows="2"></textarea>
+              <textarea id="input_text" name="input" rows="2"></textarea>
             </div>
-            <button onclick="submit_text()">Send</button>
+            <button type="button" class="send_message" onclick="submitText()">Button</button>
+            <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
           </div>
 
         </form>

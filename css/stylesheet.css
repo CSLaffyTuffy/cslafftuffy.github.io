@@ -73,6 +73,7 @@ nav {
 .search_form button:hover {
   background-color: #79ab86;
   color: white;
+  font-weight: bold;
 }
 
 .burger {
@@ -99,12 +100,12 @@ textarea {
   border-radius: 10px;
   resize: none;
   overflow: auto;
+  padding: 5px;
 
 }
 .output_text_area textarea {
   width: 100%;
   /* background-color: skyblue; */
-
 }
 .input_area {
   display: flex;
@@ -121,14 +122,18 @@ textarea {
 
   width: 100%;
   /* height: 100%; */
-  text-indent: 5px;
+  /* text-indent: 5px; */
   /* background-color: green; */
   /* margin: auto; */
 }
-.input_area button {
+.input_area button{
   width: 9%;
 }
-
+.input_area button:hover {
+  background-color: #999;
+  font-weight: bold;
+  color: white;
+}
 .sidebar{
   width :29%;
   /* background-color: purple; */

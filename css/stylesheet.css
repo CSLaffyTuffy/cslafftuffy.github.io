@@ -6,90 +6,182 @@
 .main {
   display: flex;
   flex-wrap: wrap;
-  border: 1px red solid;
+  /* border: 1px red solid; */
 }
 
 header {
   /* border: 1px red solid; */
   /* background-color: transparent; */
 }
-.nav {
+
+.navigation {
   width: 100%;
-}
-nav {
+  padding-left: 5px;
+  padding-right: 5px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
   background-color: #f8f9fb;
-
+  /* min-height: 45px; */
+  height: 6vh;
+  justify-content: space-between;
+  border-bottom: 1px #e8e9eb solid;
 }
-.logo {
-  max-width: 45px;
-  max-height: 45px;
-}
-.name {
-  color: Black;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 20px;
-}
-.nav-links {
-  /* border: 1px blue solid; */
-  display: flex;
-  justify-content: space-around;
-  width: 70%;
-}
-.nav-links li{
-  /* border: 1px orange solid; */
-  list-style: none;
-  text-align: center;
-
-}
-.nav-links a {
-  text-decoration: none;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 14px;
-  flex: 2;
-}
-.nav-links a:hover {
-  /* backgound-color: black;*/
-}
-
-.search_form {
-  /* border: solid red 1px; */
-  margin: auto;
-  width: 15%;
-}
-.search_form input {
-  width: 60%;
-}
-.search_form button {
-  background-color: inherit;
-  /* border-color: #79ab86; */
+.navigation button {
+  height: 4vh;
+  width:  70px;
+  border-color: #79ab86;
   color: #79ab86;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-.search_form button:hover {
+.navigation button:hover {
   background-color: #79ab86;
   color: white;
   font-weight: bold;
 }
 
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* font-size: em; */
+  /* min-height: 8vh; */
+
+
+}
+.logo {
+  /* border: 1px red solid; */
+  /* max-width: 45px; */
+  max-height: 6vh;
+  padding: 5px;
+}
+.banner {
+  border: blue 1px solid;
+  color: Black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.2em;
+  padding: 5px;
+  width: 30%;
+  justify-content: center;
+  text-align: center;
+}
+.nav {
+  /* border: 1px red solid; */
+  width: 50%;
+
+}
+.nav-links {
+  /* border: 1px blue solid; */
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.nav-links li{
+  /* border: 1px orange solid; */
+  list-style: none;
+  text-align: center;
+}
+.nav-links a {
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 1.3em;
+  flex: 2;
+}
+.nav-links a:hover {
+  /* backgound-color: black;*/
+}
+.search {
+  width: 20%;
+  height: 4vh;
+  /* justify-content:space-around;. */
+  /* border: 1px skyblue solid; */
+  /* align-items: flex-end; */
+}
+.search_input {
+  width: 70%;
+  height: 100%;
+  text-indent: 3px;
+}
+.login_signup {
+  /* border: black 1px solid; */
+  /* width: 30%; */
+  align-items: center;
+}
+/* .login_signup button {
+  height: 4vh;
+}
+
+.search button {
+  height: 100%;
+} */
+/* .search_form {
+  border: solid red 1px;
+  margin: auto;
+  width: 20%;
+} */
+/* .search_form input {
+  width: 60%;
+}
+.search_form button {
+  background-color: inherit;
+  border-color: #79ab86;
+  color: #79ab86;
+} */
+/* .search_form button:hover {
+  background-color: #79ab86;
+  color: white;
+  font-weight: bold;
+} */
+.drop_down {
+  display: flex;
+  align-items:center;
+  border: gray solid 1px;
+  height: 4vh;
+  justify-content: center;
+  padding: 1px;
+}
+select {
+  background-color: inherit;
+  border: 0px;
+  outline: 0px;
+
+}
 .burger {
   display: none;
+  height: 35px;
 }
-.burger div {
+.burger div{
   width: 25px;
   height:5px;
   background-color: black;
   margin: 5px;
 }
+.popular_courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  /* border: black 1px solid; */
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
 
+  /* border: 1px solid green; */
+  width: 20%;
+}
+.card_img {
+  max-width: 100%;
+  /* border: 1px red solid; */
+}
 .fourm {
   width: 100%;
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 5px;
 }
 .post {
   width : 69%;
@@ -97,7 +189,7 @@ nav {
   /* background-color: #555; */
 }
 textarea {
-  border-radius: 10px;
+  /* border-radius: 10px; */
   resize: none;
   overflow: auto;
   padding: 5px;
@@ -112,11 +204,11 @@ textarea {
   justify-content: space-between;
   /* background-color: yellow; */
   /* align-content: center; */
-  /* width: 100%; */
+  width: 100%;
 
 }
 .input_text_area {
-  width: 89%;
+  width: 70%;
 }
 .input_text_area textarea {
 
@@ -127,7 +219,8 @@ textarea {
   /* margin: auto; */
 }
 .input_area button{
-  width: 9%;
+  width: 20%;
+  font-size: 1.2em;
 }
 .input_area button:hover {
   background-color: #999;
@@ -136,6 +229,7 @@ textarea {
 }
 .sidebar{
   width :29%;
+  /* border: red solid 1px; */
   /* background-color: purple; */
 }
 
@@ -145,14 +239,68 @@ textarea {
 }
 
 
-@media screen and (max-width: 768px) {
-
+@media screen and (min-width: 200px) and (max-width: 768px) {
+  /* .navigation {
+  } */
+  .sidebar {
+    display: none;
+  }
+  .banner {
+    display: block;
+  }
+  /* .search_form {
+    width: 20%;
+  } */
+  .burger {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px red solid; */
+  }
+  .post {
+    width: 100%;
+  }
+  .banner {
+    display: block;
+  }
+  .search {
+    border: 1px blue solid;
+    width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .search_input {
+    width: 100%;
+    border: 1px red solid;
+  }
+  .nav {
+    display: none;
+  }
+  /* body {display: none;} */
 }
-@media screen and (max-width: 1024px) {
-  .nav-links {
-    /* border: 1px blue solid; */
+@media screen and (min-width: 769px) /*and (max-width: 1024px)*/ {
+  .banner {
+    display: none;
+  }
+  .nav {
+
+  }
+  .input_text_area {
+
+    width: 60%;
+    /* height: 100%; */
+    /* text-indent: 5px; */
+    /* background-color: green; */
+    /* margin: auto; */
+  }
+  .input_area button{
+    width: 15%;
+
+  }
+  /* .nav-links {
+    border: 1px blue solid;
     display: flex;
     justify-content: space-space-around;
-    width: 70%;
-  }
+    width: 80%;
+  } */
 }

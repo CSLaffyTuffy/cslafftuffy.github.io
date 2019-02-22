@@ -44,9 +44,12 @@ function clearHistory() {
   history = "";
 }
 
+// start
+function newArticle(){
+  
+}
 
 // Image handles
-<script>
    function previewFile(){
        var preview = document.querySelector('img'); //selects the query named img
        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
@@ -64,4 +67,3 @@ function clearHistory() {
   }
 
   previewFile();  //calls the function named previewFile()
-  </script>

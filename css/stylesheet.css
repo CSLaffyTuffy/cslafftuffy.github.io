@@ -13,7 +13,7 @@ header {
   /* border: 1px red solid; */
   /* background-color: transparent; */
 }
-/* Navigation bar */
+/* Navigation bar =============================*/
 .navigation {
   width: 100%;
   padding-left: 5px;
@@ -39,6 +39,7 @@ header {
   background-color: #79ab86;
   color: white;
   font-weight: bold;
+  transition: 0.75s;
 }
 
 
@@ -75,7 +76,7 @@ nav {
 }
 .nav-links {
   /* border: 1px blue solid; */
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   width: 80%;
 }
@@ -83,16 +84,22 @@ nav {
   /* border: 1px orange solid; */
   list-style: none;
   text-align: center;
+  /* display: flex; */
 }
 .nav-links a {
   text-decoration: none;
+  color: #bbb;
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 1.3em;
-  flex: 2;
+  transition: 0s;
+
 }
 .nav-links a:hover {
-  /* backgound-color: black;*/
+  color: black;
+  border: 2px black solid;
+  transition: 0.3s;
+  padding: 2px;
 }
 .search {
   width: 20%;
@@ -113,31 +120,7 @@ nav {
   /* width: 30%; */
   align-items: center;
 }
-/* .login_signup button {
-  height: 4vh;
-}
 
-.search button {
-  height: 100%;
-} */
-/* .search_form {
-  border: solid red 1px;
-  margin: auto;
-  width: 20%;
-} */
-/* .search_form input {
-  width: 60%;
-}
-.search_form button {
-  background-color: inherit;
-  border-color: #79ab86;
-  color: #79ab86;
-} */
-/* .search_form button:hover {
-  background-color: #79ab86;
-  color: white;
-  font-weight: bold;
-} */
 .drop_down {
   display: flex;
   align-items:center;
@@ -198,6 +181,8 @@ select {
   margin-top: 1vh;
   width: 100%;
 }
+
+/*========================================*/
 .fourm {
   width: 100%;
   display:flex;

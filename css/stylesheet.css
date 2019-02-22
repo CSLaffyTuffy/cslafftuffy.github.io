@@ -13,7 +13,7 @@ header {
   /* border: 1px red solid; */
   /* background-color: transparent; */
 }
-
+/* Navigation bar */
 .navigation {
   width: 100%;
   padding-left: 5px;
@@ -28,7 +28,8 @@ header {
 }
 .navigation button {
   height: 4vh;
-  width:  70px;
+  min-width: 60px;
+  width: 15vh;
   border-color: #79ab86;
   color: #79ab86;
   font-weight: bold;
@@ -96,6 +97,7 @@ nav {
 .search {
   width: 20%;
   height: 4vh;
+  display: flex;
   /* justify-content:space-around;. */
   /* border: 1px skyblue solid; */
   /* align-items: flex-end; */
@@ -106,6 +108,7 @@ nav {
   text-indent: 3px;
 }
 .login_signup {
+  display: flex;
   /* border: black 1px solid; */
   /* width: 30%; */
   align-items: center;
@@ -159,23 +162,41 @@ select {
   background-color: black;
   margin: 5px;
 }
+
+/* ================================================ */
 .popular_courses {
+  margin-top: 2vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
   /* border: black 1px solid; */
 }
+.popular_courses h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1vh;
+}
 .card {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   /* border: 1px solid green; */
-  width: 20%;
+  width: 15%;
 }
 .card_img {
-  max-width: 100%;
+  /* border: red solid 1px; */
+  width: 100%;
+  height: 10vh;
   /* border: 1px red solid; */
+}
+.card_txt {
+  /* border: 1px red solid; */
+  text-align: center;
+  margin-top: 1vh;
+  width: 100%;
 }
 .fourm {
   width: 100%;
@@ -279,6 +300,32 @@ textarea {
   /* body {display: none;} */
 }
 @media screen and (min-width: 769px) /*and (max-width: 1024px)*/ {
+  .banner {
+    display: none;
+  }
+  .nav {
+
+  }
+  .input_text_area {
+
+    width: 60%;
+    /* height: 100%; */
+    /* text-indent: 5px; */
+    /* background-color: green; */
+    /* margin: auto; */
+  }
+  .input_area button{
+    width: 15%;
+
+  }
+  /* .nav-links {
+    border: 1px blue solid;
+    display: flex;
+    justify-content: space-space-around;
+    width: 80%;
+  } */
+}
+@media screen and (min-width: 930px){
   .banner {
     display: none;
   }

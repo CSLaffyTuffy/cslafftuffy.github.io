@@ -13,11 +13,17 @@
 <body>
   <div class="main">
 
-    <header class = nav>
-      <nav>
-        <img src="./img/logo.png" alt="logo" class="logo">
+    <header class = navigation>
+      <!-- <div class="logo"> -->
+        <img class="logo" src="./img/logo.png" alt="logo" class="logo">
+      <!-- </div> -->
 
+      <div class="banner">
+        <h1>Laffituffy</h1>
+      </div>
 
+      <nav class="nav">       <!-- width: 50% -->
+        <!-- <img src="./img/logo.png" alt="logo" class="logo"> -->
         <ul class="nav-links">
           <li><a href="#">Laffytuffy</a></li>
           <li><a href="#">Popular</a></li>
@@ -25,27 +31,91 @@
           <li><a href="#">Users</a></li>
         </ul>
 
-        <form class="search_form" method="post">
-          <input class="search" type="search" placeholder="Search">
-          <button type="submit" name="input_string" onclick ="search()">Search</button>
-        </form>
-
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-
       </nav>
-    </header>
 
+      <div class="search">        <!-- width: 20%; -->
+          <input class="search_input" type="search" placeholder="Search">
+          <button type="submit" name="input_string" onclick ="search()">Search</button>
+      </div>
+      <div class="login_signup">
+        <button type="button" name="button">log in</button>
+        <button type="button" name="button">sign up</button>
+      </div>
+      <div class="drop_down">
+        <img src="./img/user.png" alt="">
+        <select class="selection" name="">
+          <option></option>
+          <option value="">o</option>
+          <option value="">o</option>
+          <option value="">o</option>
+        </select>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </header>
+    <div class="popular_courses">
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="img/logo.png">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 362</h3>
+          <h4>Software Engineering</h4>
+        </div>
+      </div><!-- End card 1 -->
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="img/logo.png">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 362</h3>
+          <h4>Software Engineering</h4>
+        </div>
+      </div><!-- End card 2 -->
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="img/logo.png">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 362</h3>
+          <h4>Software Engineering</h4>
+        </div>
+      </div><!-- End card 3 -->
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="img/logo.png">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 362</h3>
+          <h4>Software Engineering</h4>
+        </div>
+      </div><!-- End card 4 -->
+
+
+
+    </div>
     <div class="fourm">
       <div class="post">
+        <!-- image handler -->
+        <input type="file" onchange="previewFile()"><br>
+        <img src="" height="200" alt="Image preview...">
+
+        <!-- text posted -->
         <form class="entry" type="text" method="post">
           <div class="output_text_area">
-            <textarea id="output_text" readonly name="output" rows="15" value="" ></textarea>
+            <textarea id="output_text" readonly name="output" rows="15"></textarea>
           </div>
+
           <div class="input_area">
+            <button type="button" class="clear_history" onclick="clearHistory()">Clear History</button>
             <div class="input_text_area">
               <textarea id="input_text" name="input" rows="2"></textarea>
             </div>
@@ -55,6 +125,8 @@
 
         </form>
       </div>
+
+      <!-- ========================= Sidebar ========================= -->
       <div class="sidebar">
         <div class="article">
           <p>Advertisement section</p>

@@ -4,30 +4,205 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/stylesheet.css">
-  <script src='./script.js'></script>
-  <title>Document</title>
+
+  <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+  <script src="./js/script.js"></script>
+  <link rel="stylesheet" href="css/sidebar.css">
+  <title>Laffituffy</title>
 </head>
 <body>
-  <header class="grid-1">
-    <li><strong>LAFFYTUFFY</strong></li>
-    <ul class = header>
-      <li>HOME</li>
-      <li>POPULAR</li>
-      <li>ALL</li>
-      <li>USERS</li>
-    </ul>
-  </header>
-  <nav class='grid-3'>
-    <img src='./tuffy.png' alt='LAFFYTUFFY' class='tuffy-pic'>
-    <div>
+  <div class="main">
+
+    <header class = navigation>
+      <!-- <div class="logo"> -->
+        <img class="logo" src="./img/logo.png" alt="logo" class="logo">
+      <!-- </div> -->
+
+      <div class="banner">
+        <h1>Laffituffy</h1>
+      </div>
+
+      <nav class="nav">       <!-- width: 50% -->
+        <!-- <img src="./img/logo.png" alt="logo" class="logo"> -->
+        <ul class="nav-links">
+          <li><a href="#">Laffytuffy</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">All</a></li>
+          <li><a href="#">Users</a></li>
+        </ul>
+
+      </nav>
+
+      <div class="search">        <!-- width: 20%; -->
+          <input class="search_input" type="search" placeholder="Search">
+          <button type="submit" name="input_string" onclick ="search()">Search</button>
+      </div>
+      <div class="login_signup">
+        <button type="button" name="button">log in</button>
+        <button type="button" name="button">sign up</button>
+      </div>
+      <div class="drop_down">
+        <img src="./img/user.png" alt="">
+        <select id="selection" name="">
+          <option></option>
+          <option value="">o</option>
+          <option value="">o</option>
+          <option value="">o</option>
+        </select>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </header>
+    <div class="popular_courses">
+      <h1>Popular Courses</h1>
+      <div class="card">
+        <div >
+            <img class="card_img" src="./img/os.jpg">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 351</h3>
+          <h4>Operating System</h4>
+        </div>
+      </div><!-- End card 1 -->
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="./img/se.jpg">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 362</h3>
+          <h4>Software Engineer</h4>
+        </div>
+      </div><!-- End card 2 -->
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="./img/database.jpg">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 332</h3>
+          <h4>Database</h4>
+        </div>
+      </div><!-- End card 3 -->
+
+      <div class="card">
+        <div >
+            <img class="card_img" src="./img/opensource.png">
+        </div>
+        <div class="card_txt">
+          <h3>CPSC 254</h3>
+          <h4>Opensource</h4>
+        </div>
+      </div><!-- End card 4 -->
+    </div>
+
+    <div class="fourm">
+      <div class="post">
+        <button id="newPost" type="button" name="button">Create new post!</button>
+        <form class="createPost" action="index.html" method="post">
+          <h5>Title </h5>
+        </form>
+
+        <!-- image handler -->
+        <input type="file" onchange="previewFile()"><br>
+        <img src="" height="200" alt="Image preview...">
+
+        <!-- text posted -->
+        <form class="entry" type="text" method="post">
+          <div class="output_text_area">
+            <textarea id="output_text" readonly name="output" rows="15"></textarea>
+          </div>
+
+          <div class="input_area">
+            <button type="button" class="clear_history" onclick="clearHistory()">Clear History</button>
+            <div class="input_text_area">
+              <textarea id="input_text" name="input" rows="2"></textarea>
+            </div>
+            <button type="button" class="send_message" onclick="submitText()">Send</button>
+            <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
+          </div>
+
+        </form>
+      </div>
+
+      <!-- ========================= Sidebar ========================= -->
+      <div class="sidebar">
+        <div class="article1">
+          <img class="sizebarImg" src="img/Sidebar/Background/school.png" alt="background">
+          <button class ="button"> Create your post </button>
+        </div>
+
+        <div class="article2">
+          <div class="titleSlides">Ongoing School Event</div>
+          <div class="slideshow-container">
+            <div class="mySlides">
+              <img src="img/Sidebar/New/new1.png" style="width:100%">
+              <div class="text"><a href="http://news.fullerton.edu/2019wi/Insurance-Golf-Tournament.aspx" style="color:white">Golf Tournament to Support Future Insurance School at CSUF</a></div>
+            </div>
+
+            <div class="mySlides">
+              <img src="img/Sidebar/New/new2.png" style="width:100%">
+              <div class="text"><a href="http://news.fullerton.edu/2019wi/Grand-Central-20-Years.aspx" style="color:white">Grand Central Art Center Celebrates 20 Years of Creative Exploration</a></div>
+            </div>
+
+            <div class="mySlides">
+              <img src="img/Sidebar/New/new3.png" style="width:100%">
+              <div class="text"><a href="http://news.fullerton.edu/2019wi/ECS-week.aspx" style="color:white">Engineering Week Events Offer Students Insights to Career Opportunities</a></div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
+        </div>
+
+        <div class="article3">
+            <div class="titleSlides">Tutoring Hours</div>
+            <div class="slideshow-container">
+              <div class="mySlides2">
+                <img src="img/Sidebar/Tutoring/schedule.png" style="width:100%">
+                <div class="text2"> Tutor1 </div>
+              </div>
+
+              <div class="mySlides2">
+                <img src="img/Sidebar/Tutoring/schedule.png" style="width:100%">
+                <div class="text2"> Tutor2 </div>
+              </div>
+
+              <div class="mySlides2">
+                <img src="img/Sidebar/Tutoring/schedule.png" style="width:100%">
+                <div class="text2"> Tutor3 </div>
+              </div>
+
+              <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+        </div>
+
+
+        <div class="article4">
+          <p>Test 3</p>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+<!--  <nav class='grid-3'>
+     <img src='./tuffy.png' alt='LAFFYTUFFY' class='tuffy-pic'>
+    <div class="nav">
       <ul>
-        <li>hot</li>
-        <li>new</li>
-        <li>rising</li>
-        <li>controversial</li>
-        <li>gilded</li>
-        <li>wiki</li>
+        <li><a href="">HOME</a></li>
+        <li><a href="">hot</a></li>
+        <li><a href="">new</a></li>
+        <li><a href="">rising</a></li>
+        <li><a href="">controversial</a></li>
+        <li><a href="">gilded</a></li>
+        <li><a href="">wiki</a></li>
       </ul>
     </div>
     <div class="profile-ops">
@@ -40,8 +215,9 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <div id="main" class="grid-20-10-1"></div>
+  </nav> -->
+
+  <!-- <div id="main" class="grid-20-10-1"></div>
     <div>
       <div class='post'>
       <div class="post number">1</div>
@@ -74,6 +250,7 @@
       <button class="user-action-button">Submit a new text post </button>
       <button class="user-action-button">Create your own laffytuffy</button>
     </div>
-  </div>
+  </div> -->
+  <script src="js/slide.js"> </script>
 </body>
 </html>

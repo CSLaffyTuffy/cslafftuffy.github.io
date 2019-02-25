@@ -1,0 +1,130 @@
+*{  box-sizing: border-box;}
+
+.fourm {
+  margin-top: 50px;
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+/*Sidebar */
+.sidebar{
+  display:block;
+  flex-wrap: wrap;
+  width :29%;
+}
+/* First article css*/
+.article1{
+  display: flex;
+  height: 350px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.button {
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    padding: 10px 35px;
+    font-size: 14px;
+    height: 50px;
+    width: 23%;
+    align-self: flex-end;
+    font-weight: bold;
+}
+.button:hover {
+  background-color: skyblue;
+  color: white;
+}
+.sizebarImg{
+    max-width: 100%;
+}
+
+/* second article css slideshow*/
+.article2{
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.titleSlides{
+  background-color: skyblue;
+  font-size: 20px;
+  /* text-align: center; */
+}
+.linkColor{
+  color: white;
+}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 12px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: #000000;
+  color: white;
+}
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: left;
+}
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* third article css slideshow*/
+.article3{
+  border: 1px blue solid;
+  height: auto;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.text2{
+  color: 	#000000;
+  font-size: 20px;
+  padding: 0px 15px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: left;
+}
+
+.article4{
+  border: 1px pink solid;
+  width :100%;
+  height: 400px;
+  margin-bottom: 15px;
+}

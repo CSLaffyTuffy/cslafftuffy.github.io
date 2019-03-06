@@ -24,7 +24,6 @@ header {
   /* min-height: 45px; */
   height: 6vh;
   justify-content: space-between;
-  border-bottom: 1px #e8e9eb solid;
 }
 .navigation button {
   height: 4vh;
@@ -59,7 +58,6 @@ nav {
   padding: 5px;
 }
 .banner {
-  border: blue 1px solid;
   color: Black;
   text-transform: uppercase;
   letter-spacing: 5px;

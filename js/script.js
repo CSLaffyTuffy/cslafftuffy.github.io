@@ -1,4 +1,92 @@
 
+
+/*
+  ============================================================================
+                                  Login                              
+  ============================================================================  
+*/
+
+
+/*
+$(".openLogin").click(function(){
+  $(".modal").addClass("visible");
+});
+
+$(".js-close-modal").click(function(){
+  $(".modal").removeClass("visible");
+});
+
+$(document).click(function(event) {
+  //if you click on anything except the modal itself or the "open modal" link, close the modal
+  if (!$(event.target).closest(".modal,.openLogin").length) {
+    $("body").find(".modal").removeClass("visible");
+  }
+});
+
+*/
+/*
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+*/
+
+// Get the modal
+// var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
+
+
+
+// var login_onclick = false;
+function login() {
+  modal.style.display='block';
+  // document.getElementById('id01').style.width='auto';
+  // login_onclick = true;
+}
+
+// window.onclick = function() {
+//   if (login_onclick == true) {
+//     document.getElementById('id01').style.display='none';
+//     login_onclick = false;
+//   }
+  
+
+// }
+
+// var box = document.querySelector(".box");
+
+// // Detect all clicks on the document
+// document.addEventListener("click", function(event) {
+// 	// If user clicks inside the element, do nothing
+// 	if (event.target.closest(".box")) return;
+
+// 	// If user clicks outside the element, hide it!
+// 	box.classList.add("js-is-hidden");
+// });
+
+
+
+/*
+  ============================================================================
+                                  Forum                              
+  ============================================================================  
+*/
+
+
+
+
+
 let time = {
   date: "date",
   hour: 0,

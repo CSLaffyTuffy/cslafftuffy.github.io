@@ -1,1 +1,494 @@
-/*Empty css file*/
+* {
+  margin: 0px;
+  padding: 0px;
+
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px red solid; */
+}
+
+header {
+  /* border: 1px red solid; */
+  /* background-color: transparent; */
+}
+/*
+  ============================================================================
+                                  Navigation bar                              
+  ============================================================================  
+*/
+
+  .navigation {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fb;
+  /* min-height: 45px; */
+  height: 6vh;
+  justify-content: space-between;
+}
+.navigation button {
+  height: 4vh;
+  min-width: 60px;
+  width: 15vh;
+  border-color: #79ab86;
+  color: #79ab86;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.navigation button:hover {
+  background-color: #79ab86;
+  color: white;
+  font-weight: bold;
+  transition: 0.75s;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* font-size: em; */
+  /* min-height: 8vh; */
+
+
+}
+.logo {
+  /* border: 1px red solid; */
+  /* max-width: 45px; */
+  max-height: 6vh;
+  padding: 5px;
+}
+.banner {
+  color: Black;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.2em;
+  padding: 5px;
+  width: 30%;
+  justify-content: center;
+  text-align: center;
+}
+.nav {
+  /* border: 1px red solid; */
+  width: 50%;
+
+}
+.nav-links {
+  /* border: 1px blue solid; */
+  display: inline-flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.nav-links li{
+  /* border: 1px orange solid; */
+  list-style: none;
+  text-align: center;
+  /* display: flex; */
+}
+.nav-links a {
+  text-decoration: none;
+  color: #bbb;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 1.3em;
+  transition: 0s;
+
+}
+.nav-links a:hover {
+  color: black;
+  border: 2px black solid;
+  transition: 0.3s;
+  padding: 2px;
+}
+.search {
+  width: 20%;
+  height: 4vh;
+  display: flex;
+  /* justify-content:space-around;. */
+  /* border: 1px skyblue solid; */
+  /* align-items: flex-end; */
+}
+.search_input {
+  width: 70%;
+  height: 100%;
+  text-indent: 3px;
+}
+.login_signup {
+  display: flex;
+  /* border: black 1px solid; */
+  /* width: 30%; */
+  align-items: center;
+}
+
+.drop_down {
+  display: flex;
+  align-items:center;
+  border: gray solid 1px;
+  height: 4vh;
+  justify-content: center;
+  padding: 1px;
+}
+select {
+  background-color: inherit;
+  border: 0px;
+  outline: 0px;
+
+}
+.burger {
+  display: none;
+  height: 35px;
+}
+.burger div{
+  width: 25px;
+  height:5px;
+  background-color: black;
+  margin: 5px;
+}
+
+/*
+  ============================================================================
+                                  Login                              
+  ============================================================================  
+*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  /*overflow: auto;*/ /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* padding-top: 10px; */
+
+  /* &.visible {
+    display: block;
+  } */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px;
+
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+  
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.modal button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.modal button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+  /* border: solid 1px rgb(51, 255, 0); */
+}
+
+img.avatar {
+  width: 40%;
+  /* border-radius: 50%; */
+}
+
+.container {
+  padding: 16px;
+}
+.container button {
+  width: 45%;
+  border: solid 1px blue;
+
+}
+.btncontainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* border: solid 1px red; */
+}
+
+.container label {
+  display: inline-block;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+/*
+  ============================================================================
+                                  Popular Courses                              
+  ============================================================================  
+*/
+.popular_courses {
+  margin-top: 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  /* border: black 1px solid; */
+}
+.popular_courses h1 {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1vh;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* border: 1px solid green; */
+  width: 15%;
+}
+.card_img {
+  /* border: red solid 1px; */
+  width: 100%;
+  height: 10vh;
+  /* border: 1px red solid; */
+}
+.card_txt {
+  /* border: 1px red solid; */
+  text-align: center;
+  margin-top: 1vh;
+  width: 100%;
+}
+
+/*========================================*/
+.fourm {
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.post {
+  width : 69%;
+  /* border: 1px blue solid; */
+  /* background-color: #555; */
+}
+textarea {
+  /* border-radius: 10px; */
+  resize: none;
+  overflow: auto;
+  padding: 5px;
+
+}
+.output_text_area textarea {
+  width: 100%;
+  /* background-color: skyblue; */
+}
+.input_area {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: yellow; */
+  /* align-content: center; */
+  width: 100%;
+
+}
+.input_text_area {
+  width: 70%;
+}
+.input_text_area textarea {
+
+  width: 100%;
+  /* height: 100%; */
+  /* text-indent: 5px; */
+  /* background-color: green; */
+  /* margin: auto; */
+}
+.input_area button{
+  width: 20%;
+  font-size: 1.2em;
+}
+.input_area button:hover {
+  background-color: #999;
+  font-weight: bold;
+  color: white;
+}
+.sidebar{
+  width :29%;
+  /* border: red solid 1px; */
+  /* background-color: purple; */
+}
+
+.article{
+  height :25%;
+  /* background-color: blue; */
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+  /* .navigation {
+  } */
+  .sidebar {
+    display: none;
+  }
+  .banner {
+    display: block;
+  }
+  /* .search_form {
+    width: 20%;
+  } */
+  .burger {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px red solid; */
+  }
+  .post {
+    width: 100%;
+  }
+  .banner {
+    display: block;
+  }
+  .search {
+    border: 1px blue solid;
+    width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .search_input {
+    width: 100%;
+    border: 1px red solid;
+  }
+  .nav {
+    display: none;
+  }
+  /* body {display: none;} */
+}
+@media screen and (min-width: 769px) /*and (max-width: 1024px)*/ {
+  .banner {
+    display: none;
+  }
+  .nav {
+
+  }
+  .input_text_area {
+
+    width: 60%;
+    /* height: 100%; */
+    /* text-indent: 5px; */
+    /* background-color: green; */
+    /* margin: auto; */
+  }
+  .input_area button{
+    width: 15%;
+
+  }
+  /* .nav-links {
+    border: 1px blue solid;
+    display: flex;
+    justify-content: space-space-around;
+    width: 80%;
+  } */
+}
+@media screen and (min-width: 930px){
+  .banner {
+    display: none;
+  }
+  .nav {
+
+  }
+  .input_text_area {
+
+    width: 60%;
+    /* height: 100%; */
+    /* text-indent: 5px; */
+    /* background-color: green; */
+    /* margin: auto; */
+  }
+  .input_area button{
+    width: 15%;
+
+  }
+  /* .nav-links {
+    border: 1px blue solid;
+    display: flex;
+    justify-content: space-space-around;
+    width: 80%;
+  } */
+}

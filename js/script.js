@@ -1,4 +1,34 @@
 
+firebase.auth().onAuthStateChanged(function(user)
+{
+
+  if(user)//if user signed in
+  {
+
+    document.getElementById("user_div").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
+    
+    window.alert("logged in");
+  }
+  else
+  {
+    window.alert("logged out");
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "block";
+        
+  }
+
+
+
+
+});
+
+
+
+
+
+
+
 
 /*
   ============================================================================
@@ -23,6 +53,8 @@ function loginPopup() {
   }
   
 }
+
+
 
 
 /*
@@ -58,7 +90,6 @@ function signup()
 var userEmail = document.getElementById("email_field").value;
 var userPass = document.getElementById("password_field").value;
 
-
 firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error)
   {
   // Handle Errors here.
@@ -71,12 +102,39 @@ firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(functi
   window.alert("Error :" + errorMessage);
   });
 
+}
 
 
+function login()
+{
+
+var userEmail = document.getElementById("elog").value;
+var userPass = document.getElementById("plog").value;
+
+
+
+firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error)
+  {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+
+
+
+  window.alert("Error :" + errorMessage);
+  });
 
 }
 
 
+function logout()
+{
+firebase.auth().signOut();
+
+window.alert("Logged out?");
+
+}
 
 
 

@@ -57,7 +57,11 @@
           <input class="search_input" type="search" placeholder="Search">
           <button type="submit" name="input_string" onclick ="search()">Search</button>
       </div>
-      <div class="login_signup">
+      <div id="user_div" class="loggedin-div">
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <div class="login_signup" id="user_div">
         <button onclick="loginPopup()">log in</button>
         <button onclick="signupPopup()">Sign Up</button>
       </div>
@@ -93,13 +97,13 @@
           <center><label><b>Login</b></label><br></center>
 
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" > <!--required-->
+          <input type="text" placeholder="Enter Email" name="email" id="elog"> <!--required-->
     
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" >  <!--required-->
+          <input type="password" placeholder="Enter Password" name="psw" id="plog">  <!--required-->
           
           <div class="btncontainer">
-            <button type="submit">Login</button>
+            <button type="submit"onclick="login()">Login</button>
             
           </div>
           

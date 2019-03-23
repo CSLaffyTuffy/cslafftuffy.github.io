@@ -205,8 +205,8 @@ input[type=text], input[type=password] {
 .classLogin button {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+/*   padding: 14px 20px; */
+/*   margin: 8px 0; */
   border: none;
   cursor: pointer;
   width: 100%;
@@ -216,11 +216,13 @@ input[type=text], input[type=password] {
   opacity: 0.8;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+.btncontainer a {
+  border: solid red 1px;
+  width: 100%;
+  height: 100%;
+  padding: 15px 80px;
+  text-decoration: none;
+  color: white;
 }
 
 /* Center the image and position the close button */

@@ -6,10 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+
+    <!-- ============================================================================ -->
+    <!--                               FIREBASE                               -->
+    <!-- ============================================================================ -->
+<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAPJq1mYxoZxuoEbWt_jgRhNZ4k__4V_Fc",
+    authDomain: "laffytuffy-99b6c.firebaseapp.com",
+    databaseURL: "https://laffytuffy-99b6c.firebaseio.com",
+    projectId: "laffytuffy-99b6c",
+    storageBucket: "laffytuffy-99b6c.appspot.com",
+    messagingSenderId: "401274263886"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
   <script src="./js/script.js"></script>
 
   <link rel="stylesheet" href="css/sidebar.css">
-  <title>Laffituffy</title>
+  <title>Laffytuffy</title>
 </head>
 <body>
   <div class="main">
@@ -40,6 +59,7 @@
       </div>
       <div class="login_signup">
         <button onclick="loginPopup()">log in</button>
+        <button onclick="signupPopup()">Sign Up</button>
       </div>
       <div class="drop_down">
         <img src="./img/user.png" alt="">
@@ -70,6 +90,8 @@
         </div>
     
         <div class="container">
+          <center><label><b>Login</b></label><br></center>
+
           <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="email" > <!--required-->
     
@@ -78,7 +100,7 @@
           
           <div class="btncontainer">
             <button type="submit">Login</button>
-            <button><a href="./signup.html">Sign up</a></button>
+            
           </div>
           
           <label>
@@ -88,6 +110,40 @@
     
       </form>
     </div>
+
+   <!-- ============================================================================ -->
+    <!--                                    Sign Up                                     -->
+    <!-- ============================================================================ -->
+    <div id="idSignup" class="classLogin">
+  
+      <form class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('idSignup').style.display='none'" class="close" title="Close classLogin">&times;</span>
+          <img src="./img/logo.png" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <center><label><b>Sign Up</b></label><br></center>
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="email_field"> <!--required-->
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="password_field" >  <!--required-->
+          
+          <div class="btncontainer">
+            
+            <button><a onclick="signup()">Sign up</a></button>
+          </div>
+          
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+      </form>
+    </div>
+
     <!-- ============================================================================ -->
     <!--                               Popular Courses                                -->
     <!-- ============================================================================ -->

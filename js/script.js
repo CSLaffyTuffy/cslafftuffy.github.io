@@ -27,6 +27,61 @@ function loginPopup() {
 
 /*
   ============================================================================
+                                  Sign Up                            
+  ============================================================================  
+*/
+
+function signupPopup()
+{
+
+  var idLoginVar = document.getElementById('idSignup');
+  // idLoginVar.style.display = "block";
+  if(window.getComputedStyle(idLoginVar).display === "none") {
+    idLoginVar.style.display = "block";
+  }
+
+  if(window.getComputedStyle(idLoginVar).display === "block") {
+    window.onclick = function(event) {
+      if (event.target == idLoginVar) {
+          idLoginVar.style.display = "none";
+      }
+    }
+  }
+
+
+}
+
+//Handles the signup button
+function signup()
+{
+
+var userEmail = document.getElementById("email_field").value;
+var userPass = document.getElementById("password_field").value;
+
+
+firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error)
+  {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+
+
+
+  window.alert("Error :" + errorMessage);
+  });
+
+
+
+
+}
+
+
+
+
+
+/*
+  ============================================================================
                                   Forum                              
   ============================================================================  
 */

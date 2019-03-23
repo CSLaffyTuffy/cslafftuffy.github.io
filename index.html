@@ -17,18 +17,14 @@
     <!-- ============================================================================ -->
     <!--                                Navigation bar                                -->
     <!-- ============================================================================ -->
-
     <header class = navigation>
-      <!-- <div class="logo"> -->
         <img class="logo" src="./img/logo.png" alt="logo" class="logo">
-      <!-- </div> -->
 
       <div class="banner">
         <h1>Laffituffy</h1>
       </div>
 
       <nav class="nav">       <!-- width: 50% -->
-        <!-- <img src="./img/logo.png" alt="logo" class="logo"> -->
         <ul class="nav-links">
           <li><a href="#">Laffytuffy</a></li>
           <li><a href="#">Popular</a></li>
@@ -43,9 +39,7 @@
           <button type="submit" name="input_string" onclick ="search()">Search</button>
       </div>
       <div class="login_signup">
-        <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">log in</button> -->
-        <button class = "openLogin" onclick="login()">log in</button>
-<!--         <button id="signup" openLogin" onclick="signup()">sign up</button></a> -->
+        <button onclick="loginPopup()">log in</button>
       </div>
       <div class="drop_down">
         <img src="./img/user.png" alt="">
@@ -62,57 +56,38 @@
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
-    </header>
+    </header>    
 
     <!-- ============================================================================ -->
     <!--                                    Login                                     -->
     <!-- ============================================================================ -->
-    <div id="id01" class="modal">
+    <div id="idLogin" class="classLogin">
   
-      <form class="modal-content animate" action="" alt="login button doesn't have target yet" method="POST">
+      <form class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
         <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <span onclick="document.getElementById('idLogin').style.display='none'" class="close" title="Close classLogin">&times;</span>
           <img src="./img/logo.png" alt="Avatar" class="avatar">
         </div>
     
-        <div class="container" action="https://www.w3schools.com">
+        <div class="container">
           <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="email" > <!--required-->
     
           <label for="psw"><b>Password</b></label>
-<!--           <input type="password" placeholder="Enter Password" name="psw" >  <!--required--> -->
+          <input type="password" placeholder="Enter Password" name="psw" >  <!--required-->
           
           <div class="btncontainer">
             <button type="submit">Login</button>
-            <button onclick="signup()">Sign up</button>
-<!--             <button type="submit" formaction = "signup.html">Sign up</button> -->
-<!--             <a href="signup.html"><button>Sign up</button></a> -->
-            
+            <button type="submit" formaction = "./signup.html">Sign up</button>
           </div>
-          <a href="signup.html"><button>Sign up</button></a>
+          
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
         </div>
     
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-        
       </form>
     </div>
-    <script>
-      // Get the modal
-      var modal = document.getElementById('id01');
-      
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-          if (event.target == modal) {
-              modal.style.display = "none";
-          }
-      }
-    </script>
     <!-- ============================================================================ -->
     <!--                               Popular Courses                                -->
     <!-- ============================================================================ -->

@@ -155,8 +155,8 @@ select {
   ============================================================================  
 */
 
-/* The Modal (background) */
-.modal {
+/* The classLogin (background) */
+.classLogin {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -174,8 +174,8 @@ select {
   } */
 }
 
-/* Modal Content/Box */
-.modal-content {
+/* classLogin Content/Box */
+.classLogin-content {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
@@ -202,7 +202,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-.modal button {
+.classLogin button {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -212,7 +212,7 @@ input[type=text], input[type=password] {
   width: 100%;
 }
 
-.modal button:hover {
+.classLogin button:hover {
   opacity: 0.8;
 }
 

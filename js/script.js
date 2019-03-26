@@ -1,47 +1,18 @@
 
-firebase.auth().onAuthStateChanged(function(user)
-{
-
-  if(user)//if user signed in
-  {
-
-    document.getElementById("user_div").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
-    
-    window.alert("logged in");
-  }
-  else
-  {
-    window.alert("logged out");
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
-        
-  }
-
-
-
-
-});
-
-
-
-
-
-
-
 
 /*
   ============================================================================
-                                  Login                              
+                                  Login index                              
   ============================================================================  
 */
+function loginIndex() {
 
-function loginPopup() {
-  
   var idLoginVar = document.getElementById('idLogin');
   // idLoginVar.style.display = "block";
   if(window.getComputedStyle(idLoginVar).display === "none") {
     idLoginVar.style.display = "block";
+    console.log("loginIndex");
+
   }
 
   if(window.getComputedStyle(idLoginVar).display === "block") {
@@ -55,86 +26,12 @@ function loginPopup() {
 }
 
 
-
-
 /*
   ============================================================================
-                                  Sign Up                            
+                                  Login popup                              
   ============================================================================  
 */
 
-function signupPopup()
-{
-
-  var idLoginVar = document.getElementById('idSignup');
-  // idLoginVar.style.display = "block";
-  if(window.getComputedStyle(idLoginVar).display === "none") {
-    idLoginVar.style.display = "block";
-  }
-
-  if(window.getComputedStyle(idLoginVar).display === "block") {
-    window.onclick = function(event) {
-      if (event.target == idLoginVar) {
-          idLoginVar.style.display = "none";
-      }
-    }
-  }
-
-
-}
-
-//Handles the signup button
-function signup()
-{
-
-var userEmail = document.getElementById("email_field").value;
-var userPass = document.getElementById("password_field").value;
-
-firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error)
-  {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-
-
-
-
-  window.alert("Error :" + errorMessage);
-  });
-
-}
-
-
-function login()
-{
-
-var userEmail = document.getElementById("elog").value;
-var userPass = document.getElementById("plog").value;
-
-
-
-firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error)
-  {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-
-
-
-
-  window.alert("Error :" + errorMessage);
-  });
-
-}
-
-
-function logout()
-{
-firebase.auth().signOut();
-
-window.alert("Logged out?");
-
-}
 
 
 
@@ -172,7 +69,7 @@ function search() {
 }
 
 let history = "";
-document.getElementById("output_text").value = "";
+// document.getElementById("output_text").value = "";
 
 function submitText() {
   console.log("Testing");

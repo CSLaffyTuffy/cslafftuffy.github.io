@@ -20,7 +20,7 @@
   height: auto;
   justify-content: center;
   width: auto;
-  margin-bottom: 25px;
+  margin-bottom: ;
   border: 2px Gainsboro dashed;
   max-height: 450px;
 }
@@ -69,7 +69,7 @@ input[type=text] {
   border: 1px solid #ccc;
   box-sizing: border-box;
   resize: none;
-  height: 500px;
+  height: 300px;
 }
 .cancelbtn {
   color: white;
@@ -97,9 +97,10 @@ input[type=text] {
   height: 100%;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
-  padding-top: 60px;
+  /* padding-top: 60px; */
 }
 .modal-content {
+  border: red 2px solid;
   background-color: #fefefe;
   margin: 5% auto 15% auto;
   width: 60%;

@@ -100,7 +100,7 @@ input[type=text] {
   /* padding-top: 60px; */
 }
 .modal-content {
-  border: red 2px solid;
+/*   border: red 2px solid; */
   background-color: #fefefe;
   margin: 5% auto 15% auto;
   width: 60%;

@@ -122,26 +122,6 @@ function newArticle(){
   ============================================================================  
 */
 
-
-function sideCreatePost() {
-
-  var idArticle1Var = document.getElementById('myId');
-  // idArticle1Var.style.display = "block";
-  if(window.getComputedStyle(idArticle1Var).display === "none") {
-    idArticle1Var.style.display = "block";
-    console.log("sideCreatePost");
-
-  }
-
-  if(window.getComputedStyle(idArticle1Var).display === "block") {
-    window.onclick = function(event) {
-      if (event.target == idArticle1Var) {
-          idArticle1Var.style.display = "none";
-      }
-    }
-  }
-  
-}
 // =============
 // Article2
 // =============
@@ -165,6 +145,28 @@ function showSlides(n, no) {
   x[slideIndex[no]-1].style.display = "block";
 }
 
+// =============
+
+
+function sideCreatePost() {
+
+  var idArticle1Var = document.getElementById('myId');
+  // idArticle1Var.style.display = "block";
+  if(window.getComputedStyle(idArticle1Var).display === "none") {
+    idArticle1Var.style.display = "block";
+    console.log("sideCreatePost");
+
+  }
+
+  if(window.getComputedStyle(idArticle1Var).display === "block") {
+    window.onclick = function(event) {
+      if (event.target == idArticle1Var) {
+          idArticle1Var.style.display = "none";
+      }
+    }
+  }
+  
+}
 
 
 

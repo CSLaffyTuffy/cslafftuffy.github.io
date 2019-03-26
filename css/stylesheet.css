@@ -205,8 +205,10 @@ input[type=text], input[type=password] {
 .classLogin button {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  /* padding: 14px 20px; */
+  /* margin: 8px 0; */
+  width: 20px;
+  height: 50px;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -215,7 +217,16 @@ input[type=text], input[type=password] {
 .classLogin button:hover {
   opacity: 0.8;
 }
-
+.btncontainer a {
+/*   border: solid red 1px; */
+  /* width: 100%; */
+  /* height: 100%; */
+  padding: 15px 80px;
+  text-decoration: none;
+  color: white;
+  /* padding: 9% 36% 9% 36%; */
+  
+}
 /* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;

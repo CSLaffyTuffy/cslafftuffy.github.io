@@ -178,9 +178,11 @@
     <!-- ============================================================================ -->
 
       <div class="sidebar">
-        <div class="article1">
+        
+        <div class="article1" id="idArticle1">
           <img class="sizebarImg" src="img/Sidebar/Background/school.png" alt="background">
-          <button onclick="document.getElementById('myId').style.display='block'" class ="button"> Create your post </button>
+          <button onclick="sideCreatePost()" class="button"> Create your post </button>
+
           <div id="myId" class="setBox">
             <form class="modal-content animate" action="/action_page.php">
               <div class="imgcontainer">
@@ -194,7 +196,7 @@
                 <label for="post"><h4>Your post</h4></label>
                 <textarea class="createText"> </textarea>
 
-                <button type="submit" style="width:30%">Create Post</button>
+                <!-- <button type="submit" style="width:30%">Create Post</button> -->
               </div>
 
               <div class="container" style="background-color:#f1f1f1">
@@ -205,8 +207,52 @@
           </div>
 
         </div>
+        
 
-        <div class="article2">
+        <!-- ======================================================================================== -->
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade"> 
+              <a href="http://news.fullerton.edu/2019wi/Insurance-Golf-Tournament.aspx" style="color:white">
+                <div class="numbertext">1 / 3</div>
+                <img src="img/Sidebar/New/new1.png" style="width:100%">
+                <div class="text">Golf Tournament to Support Future Insurance School at CSUF</div>
+              </a>
+            </div>
+            
+            <div class="mySlides fade">
+              <a href="http://news.fullerton.edu/2019wi/Grand-Central-20-Years.aspx" style="color:white">
+                <div class="numbertext">2 / 3</div>
+                <img src="img/Sidebar/New/new2.png" style="width:100%">
+                <div class="text">Grand Central Art Center Celebrates 20 Years of Creative Exploration</div>
+              </a>
+            </div>
+            
+            <div class="mySlides fade">
+              <a href="http://news.fullerton.edu/2019wi/ECS-week.aspx" style="color:white">  
+                <div class="numbertext">3 / 3</div>
+                <img src="img/Sidebar/New/new3.png" style="width:100%">
+                <div class="text">Engineering Week Events Offer Students Insights to Career Opportunities</div>
+              </a>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+
+
+        <!-- ======================================================================================== -->
+
+        <!-- <div class="article2">
           <div class="titleSlides">Ongoing School Event</div>
           <div class="slideshow-container">
             <div class="mySlides"> <a href="http://news.fullerton.edu/2019wi/Insurance-Golf-Tournament.aspx" style="color:white">
@@ -227,7 +273,7 @@
             <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
             </div>
-        </div>
+        </div> -->
 
         <div class="article3">
             <div class="titleSlides">Tutoring Hours</div>

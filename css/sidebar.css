@@ -20,7 +20,7 @@
   height: auto;
   justify-content: center;
   width: auto;
-  margin-bottom: ;
+  margin-bottom: 25px;
   border: 2px Gainsboro dashed;
   max-height: 450px;
 }
@@ -50,43 +50,64 @@ input[type=text] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
+/* 
+============================================================================ 
+                              Popup Create Post                                    
+============================================================================  
+*/
+
+.postPopupButton {
+  
+  /* background-color: #4CAF50; */
+  /* border: solid blue 2px; */
+  color: white;
+  width: 100%;
+  margin-top: 1vh;
+  display: inline-flex;
+  justify-content: space-between;
+}
+.postPopupButton button {
+  /* border: solid blue 2px; */
+  color: white;
+  height: 5vh;
+  /* border: none; */
+  cursor: pointer;
+  width: 47%;
+  /* display: inline-block; */
+  padding: 0px;
+}
+.postPopupButton button:hover {
+  opacity: 0.5;
+}
 .buttonCreate {
   background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  border: none;
-  cursor: pointer;
-  width: 200px;
 }
-.buttonCreate:hover {
-  opacity: 0.8;
+.cancelbtn {
+  background-color: #f44336;
 }
+
 .createText{
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  height: 5vh;
+  /* margin: 8px 0; */
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
   resize: none;
-  height: 250px;
+  height: 40vh;
+  margin-top: 1vh;
 }
-.cancelbtn {
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  background-color: #f44336;
-  width:200px;
-}
-.cancelbtn:hover {
-  opacity: 0.8;
-}
+
 .container {
-  padding: 16px;
+  /* border: solid 1px red; */
+  /* padding: 16px; */
+  /* margin-top: 1.5vh; */
+  width: 100%;
+  height: 70vh;
 }
 .setBox {
+  /* border: solid 15px blue; */
   display: none;
   position: fixed;
   /* Keep the pop up box from overlay other */
@@ -97,12 +118,10 @@ input[type=text] {
   height: 100%;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
-  /* padding-top: 60px; */
 }
 .modal-content {
-/*   border: red 2px solid; */
   background-color: #fefefe;
-  margin: 5% auto 15% auto;
+  margin: 2vh auto 15% auto;
   width: 60%;
 }
 .close {
@@ -139,8 +158,11 @@ input[type=text] {
      width: 100%;
   }
 }
-
-/* second article css slideshow*/
+/* 
+============================================================================ 
+                              Article 2 - slideshow                                    
+============================================================================  
+*/
 .article2{
   width: 100%;
   height: auto;

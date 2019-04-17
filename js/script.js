@@ -1,18 +1,47 @@
 
+firebase.auth().onAuthStateChanged(function(user)
+{
+
+ 	 if(user)//if user signed in
+  	{
+
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "block";
+    
+    window.alert("logged in"+user.username);
+
+	}
+ 	
+  else
+  	{
+  // window.alert("user?: " + user);
+   window.alert("logged out");
+    
+    
+    document.getElementById("user_div").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
+	}
+
+  
+});
+
+
+
+
 
 /*
   ============================================================================
-                                  Login index                              
+                                  Login                              
   ============================================================================  
 */
-function loginIndex() {
+
+function loginPopup() {
+  
 
   var idLoginVar = document.getElementById('idLogin');
   // idLoginVar.style.display = "block";
   if(window.getComputedStyle(idLoginVar).display === "none") {
     idLoginVar.style.display = "block";
-    console.log("loginIndex");
-
   }
 
   if(window.getComputedStyle(idLoginVar).display === "block") {
@@ -26,12 +55,95 @@ function loginIndex() {
 }
 
 
+
+
 /*
   ============================================================================
-                                  Login popup                              
+                                  Sign Up                            
   ============================================================================  
 */
 
+function signupPopup()
+{
+
+  var idLoginVar = document.getElementById('idSignup');
+  // idLoginVar.style.display = "block";
+  if(window.getComputedStyle(idLoginVar).display === "none") {
+    idLoginVar.style.display = "block";
+  }
+
+  if(window.getComputedStyle(idLoginVar).display === "block") {
+    window.onclick = function(event) {
+      if (event.target == idLoginVar) {
+          idLoginVar.style.display = "none";
+      }
+    }
+  }
+
+
+}
+
+//Handles the signup button
+
+function signup()
+{
+var signedUp = false;
+var userEmail = document.getElementById("email_field").value;
+var userPass = document.getElementById("password_field").value;
+
+window.alert(userEmail);
+
+firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error)
+  {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  
+
+
+
+  window.alert("Error :" + errorMessage);
+  });
+
+}
+
+
+
+
+
+
+function login()
+{
+
+window.alert("Logging in...");
+var userEmail = document.getElementById("elog").value;
+var userPass = document.getElementById("plog").value;
+
+
+
+	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error)
+	{
+  	// Handle Errors here.
+  	var errorCode = error.code;
+  	var errorMessage = error.message;
+
+
+
+
+  window.alert("Error :" + errorMessage);
+    });
+
+
+}
+
+
+function logout()
+{
+firebase.auth().signOut();
+
+window.alert("Logged out");
+
+}
 
 
 
@@ -69,7 +181,7 @@ function search() {
 }
 
 let history = "";
-// document.getElementById("output_text").value = "";
+document.getElementById("output_text").value = "";
 
 function submitText() {
   console.log("Testing");
@@ -113,35 +225,3 @@ function newArticle(){
   }
 
   previewFile();  //calls the function named previewFile()
-
-
-
- /*
-  ============================================================================
-                                  Sidebar                              
-  ============================================================================  
-*/
-
-
-function sideCreatePost() {
-
-  var idArticle1Var = document.getElementById('myId');
-  // idArticle1Var.style.display = "block";
-  if(window.getComputedStyle(idArticle1Var).display === "none") {
-    idArticle1Var.style.display = "block";
-    console.log("sideCreatePost");
-
-  }
-
-  if(window.getComputedStyle(idArticle1Var).display === "block") {
-    window.onclick = function(event) {
-      if (event.target == idArticle1Var) {
-          idArticle1Var.style.display = "none";
-      }
-    }
-  }
-  
-}
-
-
-

@@ -159,6 +159,16 @@ window.alert("Logged out");
   ============================================================================  
 */
 
+
+
+
+
+
+
+
+
+
+
 function newPost() {
   
   let postTitle = document.querySelector('input.title').value;
@@ -167,7 +177,35 @@ function newPost() {
   // let addLocation = document.querySelector('div.postContainer');
   let addLocation = document.querySelector('div.forumTitle');
 
-  let newPostContent = '<div class="post">  <h1>' + postTitle + '</h1> <p> ' + postText +'</p> </div>';
+
+  // submitPost();
+
+  // let newPostContent = '<div class="post">  <h1 class="postTitle">' + postTitle + '</h1> <div class="postContent"> <pre>' + postText + '</pre> </div> </div>';
+
+
+
+
+  let newPostContent = '<div class="post">' + 
+                          '<div class="postHeader">' + 
+                            '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
+                            '<div class="username">Username</div>' + 
+                            '<div class="time">postTime</div>' + 
+                          '</div>' + 
+
+                          '<h1 class="postTitle">' + postTitle + '</h1>' + 
+                          '<img class="postImg" src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
+
+                          
+                          '<div class="postContent">' + postText + '</div>' + 
+                        '</div>';
+
+
+
+
+
+
+
+
 
   console.log(postTitle);
   console.log(postText);
@@ -216,6 +254,21 @@ function search() {
 
 let history = "";
 document.getElementById("output_text").value = "";
+
+
+function submitPost() {
+  getTime();
+  // document.getElementsByClassName("input_text").value = "Text Here";
+  // message.message_content = document.getElementsByClassName("input_text").value;
+  message.message_content = document.getElementById("input_text").value;
+  let outputPostMessage = time.date +" " + time.hour +":" + time.minute+ ":" + time.second + "\n" + message.message_content;
+  history += outputMessage + "\n\n";
+  document.getElementById("output_text").value = history;
+
+  document.getElementById("input_text").value = "";
+
+}
+
 
 function submitText() {
   console.log("Testing");

@@ -320,7 +320,7 @@ span.psw {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
-  border: black 1px solid;
+  /* border: black 1px solid; */
 }
 .popular_courses h1 {
   width: 100%;
@@ -361,13 +361,14 @@ span.psw {
   justify-content: space-between;
   margin-top: 2vh;
   /* padding: 5px; */
-  border: 1px purple solid;
-  background-color: #f8f9fb;
+  /* border: 1px purple solid; */
+  background-color: #f8f9fb; /* Fallback color */
+  background-color: +100%;
 
 }
 .postContainer {
   margin: 0px;
-  border: 1px red solid;
+  /* border: 1px red solid; */
   width: 100%;
   display: block;
   /* margin: auto; */
@@ -380,12 +381,54 @@ span.psw {
 }
 .post {
   width : 94%;
-  border: 1px blue solid;
+  /* border: 1px blue solid; */
   /* background-color: #555; */
-  margin: 2vh auto auto auto;
+  margin: 1vh auto 10vh auto;
   background-color: white;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 15px;
+  /* border-top-right-radius: 15px;
+  border-bottom-ra
+  border-bottom-radius: 15px; */
+  
+}
+.postHeader {
+  /* border: 1px blue solid; */
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.usrLogo {
+  border: 1px green solid;
+  align-self: center;
+  width: 4%;
+  margin: 0.5%;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.username {
+  /* border: 1px red solid; */
+  align-content: center;
+  width: 50%;
+}
+.time {
+  /* border: 1px blue solid; */
+  width: 44%;
+}
+.postTitle {
+  text-indent: 2ch;
+  margin-bottom: 2vh;
+}
+.postImg {
+  border: 1px blue solid;
+
+  display: block;
+  margin: auto;
+  max-width: 60%;
+}
+.postContent {
+  display: inline-block;
+  margin: 1em;
 }
 textarea {
   /* border-radius: 10px; */

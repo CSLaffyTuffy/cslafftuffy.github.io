@@ -1,12 +1,12 @@
 *{  box-sizing: border-box;}
 
-.fourm {
+/* .fourm {
   margin-top: 50px;
   width: 100%;
   display:flex;
   justify-content: space-between;
   padding: 5px;
-}
+} */
 
 /*Sidebar */
 .sidebar{

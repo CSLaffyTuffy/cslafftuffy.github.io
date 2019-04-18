@@ -153,6 +153,40 @@ window.alert("Logged out");
   ============================================================================  
 */
 
+/*
+  ============================================================================
+                                  postContainer                              
+  ============================================================================  
+*/
+
+function newPost() {
+  
+  let postTitle = document.querySelector('input.title').value;
+  let postText  = document.querySelector('textarea.createText').value;
+
+  // let addLocation = document.querySelector('div.postContainer');
+  let addLocation = document.querySelector('div.forumTitle');
+
+  let newPostContent = '<div class="post">  <h1>' + postTitle + '</h1> <p> ' + postText +'</p> </div>';
+
+  console.log(postTitle);
+  console.log(postText);
+  console.log(newPostContent);
+  addLocation.insertAdjacentHTML('afterend', newPostContent);
+  
+  // addLocation.insertAdjacentHTML('afterbegin', "<h1>Testing 1</h1>");
+  console.log("1111111111111111111");
+  console.log("1111111111111111111");
+
+  // clear form
+  document.querySelector('input.title').value="";
+  document.querySelector('textarea.createText').value="";
+  // Hide popup
+  let popupPost = document.getElementById('myId');
+  popupPost.style.display = 'none';
+  
+}
+
 
 
 

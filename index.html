@@ -200,32 +200,34 @@
 
     
     <div class="fourm">
-      <div class="post">
-        <button id="newPost" type="button" name="button">Create new post!</button>
-        <form class="createPost" action="index.html" method="post">
-          <h5>Title </h5>
-        </form>
+      <div class="postContainer">
+        <div class="post">
+          <button id="newPost" type="button" name="button">Create new post!</button>
+          <form class="createPost" action="index.html" method="post">
+            <h5>Title </h5>
+          </form>
 
-        <!-- image handler -->
-        <input type="file" onchange="previewFile()"><br>
-        <img src="" height="200" alt="Image preview...">
+          <!-- image handler -->
+          <input type="file" onchange="previewFile()"><br>
+          <img src="" height="200" alt="Image preview...">
 
-        <!-- text posted -->
-        <form class="entry" type="text" method="post">
-          <div class="output_text_area">
-            <textarea id="output_text" readonly name="output" rows="15"></textarea>
-          </div>
-
-          <div class="input_area">
-            <button type="button" class="clear_history" onclick="clearHistory()">Clear History</button>
-            <div class="input_text_area">
-              <textarea id="input_text" name="input" rows="2"></textarea>
+          <!-- text posted -->
+          <form class="entry" type="text" method="post">
+            <div class="output_text_area">
+              <textarea id="output_text" readonly name="output" rows="15"></textarea>
             </div>
-            <button type="button" class="send_message" onclick="submitText()">Send</button>
-            <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
-          </div>
 
-        </form>
+            <div class="input_area">
+              <button type="button" class="clear_history" onclick="clearHistory()">Clear History</button>
+              <div class="input_text_area">
+                <textarea id="input_text" name="input" rows="2"></textarea>
+              </div>
+              <button type="button" class="send_message" onclick="submitText()">Send</button>
+              <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
+            </div>
+
+          </form>
+        </div>
       </div>
 
     <!-- ============================================================================ -->
@@ -244,14 +246,14 @@
 
               <div class="container">
                 <label for="subject"><h3>Subject</h3></label>
-                <input type="text" placeholder="Enter your class">
+                <input class="title" type="text" placeholder="Enter your class">
 
                 <label for="post"><h3>Your post</h3></label>
                 <textarea class="createText"> </textarea>
 
                 <!-- <button type="submit" style="width:30%">Create Post</button> -->
                 <div class="postPopupButton">
-                  <button class="buttonCreate" type="button" >Create Post</button>
+                  <button class="buttonCreate" type="button" onclick="newPost()">Create Post</button>
                   <button class="cancelbtn"    type="button" onclick="document.getElementById('myId').style.display='none'">Cancel</button>
                 </div>
               </div>

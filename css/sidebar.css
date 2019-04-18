@@ -12,7 +12,7 @@
 .sidebar{
   display:block;
   flex-wrap: wrap;
-  width :29%;
+  width :30%;
 }
 /* First article*/
 .article1{
@@ -44,18 +44,20 @@
 }
 input[type=text] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  /* padding: 12px 20px; */
+  /* margin: 8px 0; */
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 
 /* 
 ============================================================================ 
                               Popup Create Post                                    
 ============================================================================  
 */
+
 
 .postPopupButton {
   
@@ -86,25 +88,39 @@ input[type=text] {
 .cancelbtn {
   background-color: #f44336;
 }
-
+/* 
 .createText{
   width: 100%;
   height: 5vh;
-  /* margin: 8px 0; */
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
   resize: none;
   height: 40vh;
   margin-top: 1vh;
-}
+} */
 
+ 
+.title, .createText{
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  resize: none;
+  margin-top: 1vh;
+} 
+.createText {
+  height: 40vh;
+  text-indent: 2ch;
+
+}
+.title {
+}
 .container {
   /* border: solid 1px red; */
   /* padding: 16px; */
   /* margin-top: 1.5vh; */
   width: 100%;
-  height: 70vh;
 }
 .setBox {
   /* border: solid 15px blue; */
@@ -121,7 +137,7 @@ input[type=text] {
 }
 .modal-content {
   background-color: #fefefe;
-  margin: 2vh auto 15% auto;
+  margin: 10vh auto auto auto;
   width: 60%;
 }
 .close {

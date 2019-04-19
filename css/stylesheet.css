@@ -396,6 +396,7 @@ span.psw {
   /* border-top-right-radius: 15px;
   border-bottom-ra
   border-bottom-radius: 15px; */
+  display: block;
   
 }
 .postHeader {

@@ -175,14 +175,29 @@ function newPost() {
   let postText  = document.querySelector('textarea.createText').value;
 
   // let addLocation = document.querySelector('div.postContainer');
-  let addLocation = document.querySelector('div.forumTitle');
+  // let addLocation = document.querySelector('div.forumTitle');
+  
+
+  let addLocation = document.querySelector('div.postContainer');
+
 
 
   // submitPost();
 
   // let newPostContent = '<div class="post">  <h1 class="postTitle">' + postTitle + '</h1> <div class="postContent"> <pre>' + postText + '</pre> </div> </div>';
 
-
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
 
 
   let newPostContent = '<div class="post">' + 
@@ -210,7 +225,7 @@ function newPost() {
   console.log(postTitle);
   console.log(postText);
   console.log(newPostContent);
-  addLocation.insertAdjacentHTML('afterend', newPostContent);
+  addLocation.insertAdjacentHTML('afterbegin', newPostContent);
   
   // addLocation.insertAdjacentHTML('afterbegin', "<h1>Testing 1</h1>");
   console.log("1111111111111111111");

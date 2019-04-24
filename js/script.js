@@ -8,14 +8,14 @@ firebase.auth().onAuthStateChanged(function(user)
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
     
-    window.alert("logged in"+user.username);
+    window.alert("logged in as "+user.email);
 
 	}
  	
   else
   	{
   // window.alert("user?: " + user);
-   window.alert("logged out");
+    window.alert("logged out");
     
     
     document.getElementById("user_div").style.display = "block";
@@ -87,7 +87,7 @@ function signupPopup()
 
 function signup()
 {
-var signedUp = false;
+
 var userEmail = document.getElementById("email_field").value;
 var userPass = document.getElementById("password_field").value;
 

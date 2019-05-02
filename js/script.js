@@ -7,6 +7,7 @@ firebase.auth().onAuthStateChanged(function(user)
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+
     window.alert("logged in as "+user.email);
 
 	}
@@ -22,7 +23,6 @@ firebase.auth().onAuthStateChanged(function(user)
 	}
 
 });
-
 
 
 /*
@@ -188,12 +188,66 @@ function newPost() {
   
   let postTitle = document.querySelector('input.title').value;
   let postText  = document.querySelector('textarea.createText').value;
-  let postDate = getdate()
 
+  let addLocation = document.querySelector('div.postContainer');
+  
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+ 
+
+let today = new Date();
+let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
+let timeS = today.getHours() + ":" + today.getMinutes();
+
+
+  let newPostContent = '<div class="post">' + 
+                          '<div class="postHeader">' + 
+                            '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
+                            '<div class="username">Username</div>' + 
+							'<div class="time"> Date: ' + date + '' + timeS + '</div> '  + 
+							 
+                          '</div>' + 
+                          '<h1 class="postTitle">' + postTitle + '</h1>' + 
+                          
+
+                          
+                          '<div class="postContent">' + postText + '</div>' + 
+                        '</div>';
+
+
+
+
+
+
+
+
+
+  console.log(postTitle);
+  console.log(postText);
+  console.log(newPostContent);
+  addLocation.insertAdjacentHTML('afterbegin', newPostContent);
+  
+  console.log("1111111111111111111");
+  console.log("1111111111111111111");
+
+  // clear form
+  document.querySelector('input.title').value="";
+  document.querySelector('textarea.createText').value="";
+  // Hide popup
+  let popupPost = document.getElementById('myId');
+  popupPost.style.display = 'none';
   
 }
-
-
 
 
 

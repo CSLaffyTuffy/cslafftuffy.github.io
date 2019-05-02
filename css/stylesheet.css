@@ -388,7 +388,7 @@ span.psw {
 }
 .post {
   width : 94%;
-  /* border: 1px blue solid; */
+  border: 1px blue solid;
   /* background-color: #555; */
   margin: 0vh auto 5vh auto;
   background-color: white;
@@ -400,7 +400,7 @@ span.psw {
   
 }
 .postHeader {
-  /* border: 1px blue solid; */
+  border-bottom: 1px blue solid;
   width: 100%;
   display: inline-flex;
   justify-content: space-around;
@@ -421,15 +421,16 @@ span.psw {
 }
 .time {
   /* border: 1px blue solid; */
-  width: 44%;
+  width: 80%;
 }
+
 .postTitle {
-  text-indent: 2ch;
-  margin-bottom: 2vh;
+  text-indent: 1ch;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
 }
 .postImg {
   border: 1px blue solid;
-
   display: block;
   margin: auto;
   max-width: 60%;

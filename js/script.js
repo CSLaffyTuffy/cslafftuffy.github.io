@@ -1,4 +1,242 @@
 
+firebase.auth().onAuthStateChanged(function(user)
+{
+
+ 	 if(user)//if user signed in
+  	{
+
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "block";
+    
+    window.alert("logged in as "+user.email);
+
+	}
+ 	
+  else
+  	{
+  // window.alert("user?: " + user);
+    window.alert("logged out");
+    
+    
+    document.getElementById("user_div").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
+	}
+
+  
+});
+
+
+
+
+
+/*
+  ============================================================================
+                                  Login                              
+  ============================================================================  
+*/
+
+function loginPopup() {
+  
+
+  var idLoginVar = document.getElementById('idLogin');
+  // idLoginVar.style.display = "block";
+  if(window.getComputedStyle(idLoginVar).display === "none") {
+    idLoginVar.style.display = "block";
+  }
+
+  if(window.getComputedStyle(idLoginVar).display === "block") {
+    window.onclick = function(event) {
+      if (event.target == idLoginVar) {
+          idLoginVar.style.display = "none";
+      }
+    }
+  }
+  
+}
+
+
+
+
+/*
+  ============================================================================
+                                  Sign Up                            
+  ============================================================================  
+*/
+
+function signupPopup()
+{
+
+  var idLoginVar = document.getElementById('idSignup');
+  // idLoginVar.style.display = "block";
+  if(window.getComputedStyle(idLoginVar).display === "none") {
+    idLoginVar.style.display = "block";
+  }
+
+  if(window.getComputedStyle(idLoginVar).display === "block") {
+    window.onclick = function(event) {
+      if (event.target == idLoginVar) {
+          idLoginVar.style.display = "none";
+      }
+    }
+  }
+
+
+}
+
+//Handles the signup button
+
+function signup()
+{
+
+var userEmail = document.getElementById("email_field").value;
+var userPass = document.getElementById("password_field").value;
+
+
+
+firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error)
+  {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  
+
+
+
+  window.alert("Error :" + errorMessage);
+  });
+
+}
+
+
+
+
+
+
+function login()
+{
+
+window.alert("Logging in...");
+var userEmail = document.getElementById("elog").value;
+var userPass = document.getElementById("plog").value;
+
+
+
+	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error)
+	{
+  	// Handle Errors here.
+  	var errorCode = error.code;
+  	var errorMessage = error.message;
+
+
+
+
+  window.alert("Error :" + errorMessage);
+    });
+
+
+}
+
+
+function logout()
+{
+firebase.auth().signOut();
+
+window.alert("Logged out");
+
+}
+
+
+
+/*
+  ============================================================================
+                                  Forum                              
+  ============================================================================  
+*/
+
+/*
+  ============================================================================
+                                  postContainer                              
+  ============================================================================  
+*/
+
+
+
+
+
+
+
+
+
+
+
+function newPost() {
+  
+  let postTitle = document.querySelector('input.title').value;
+  let postText  = document.querySelector('textarea.createText').value;
+
+  let addLocation = document.querySelector('div.postContainer');
+  
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+  console.log("newPost run");
+ 
+
+let today = new Date();
+let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
+let timeS = today.getHours() + ":" + today.getMinutes();
+
+
+  let newPostContent = '<div class="post">' + 
+                          '<div class="postHeader">' + 
+                            '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
+                            '<div class="username">Username</div>' + 
+							'<div class="time"> Date: ' + date + '' + timeS + '</div> '  + 
+							 
+                          '</div>' + 
+                          '<h1 class="postTitle">' + postTitle + '</h1>' + 
+                          
+
+                          
+                          '<div class="postContent">' + postText + '</div>' + 
+                        '</div>';
+
+
+
+
+
+
+
+
+
+  console.log(postTitle);
+  console.log(postText);
+  console.log(newPostContent);
+  addLocation.insertAdjacentHTML('afterbegin', newPostContent);
+  
+  console.log("1111111111111111111");
+  console.log("1111111111111111111");
+
+  // clear form
+  document.querySelector('input.title').value="";
+  document.querySelector('textarea.createText').value="";
+  // Hide popup
+  let popupPost = document.getElementById('myId');
+  popupPost.style.display = 'none';
+  
+}
+
+
+
+
 let time = {
   date: "date",
   hour: 0,
@@ -24,6 +262,21 @@ function search() {
 
 let history = "";
 document.getElementById("output_text").value = "";
+
+
+function submitPost() {
+  getTime();
+  // document.getElementsByClassName("input_text").value = "Text Here";
+  // message.message_content = document.getElementsByClassName("input_text").value;
+  message.message_content = document.getElementById("input_text").value;
+  let outputPostMessage = time.date +" " + time.hour +":" + time.minute+ ":" + time.second + "\n" + message.message_content;
+  history += outputMessage + "\n\n";
+  document.getElementById("output_text").value = history;
+
+  document.getElementById("input_text").value = "";
+
+}
+
 
 function submitText() {
   console.log("Testing");

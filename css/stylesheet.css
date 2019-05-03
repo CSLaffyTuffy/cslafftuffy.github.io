@@ -93,10 +93,10 @@ nav {
 }
 .nav-links a {
   text-decoration: none;
-  color: #bbb;
-  letter-spacing: 3px;
+  color: rgb(73,169,251);
+  letter-spacing: 15px;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.5em;
   transition: 0s;
 
 }
@@ -118,6 +118,7 @@ nav {
   width: 70%;
   height: 100%;
   text-indent: 3px;
+
 }
 .login_signup {
   display: flex;
@@ -150,6 +151,8 @@ select {
   background-color: black;
   margin: 5px;
 }
+
+/*
 
 /*
   ============================================================================

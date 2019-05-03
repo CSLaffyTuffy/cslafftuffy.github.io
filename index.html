@@ -46,6 +46,9 @@
       <nav class="nav">       <!-- width: 50% -->
         <ul class="nav-links">
           <li><a href="#">Laffytuffy</a></li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">All</a></li>
+          <li><a href="#">Users</a></li>
         </ul>
 
       </nav>
@@ -83,65 +86,75 @@
     <!--                                    Login                                     -->
     <!-- ============================================================================ -->
     <div id="idLogin" class="classLogin">
-
-      <form class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
+  
+      <div class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
         <div class="imgcontainer">
           <span onclick="document.getElementById('idLogin').style.display='none'" class="close" title="Close classLogin">&times;</span>
           <img src="./img/logo.png" alt="Avatar" class="avatar">
         </div>
-
+    
         <div class="container">
           <center><label><b>Login</b></label><br></center>
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" id="elog"> <!--required-->
-
-          <label for="psw"><b>Password</b></label>
+          <label for="email"><b>Email\UserName:</b></label>
+          <input type="text" placeholder="Enter Email or UserName" name="email" id="elog"> <!--required-->
+    
+          <label for="psw"><b>Password:</b></label>
           <input type="password" placeholder="Enter Password" name="psw" id="plog">  <!--required-->
 
+          <label id="llog"></label>
+          
           <div class="btncontainer">
             <button type="button"onclick="login()">Login</button>
-
+            
           </div>
-
+          
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
         </div>
-
-      </form>
+    
+      </div>
     </div>
 
    <!-- ============================================================================ -->
     <!--                                    Sign Up                                     -->
     <!-- ============================================================================ -->
     <div id="idSignup" class="classLogin">
-
+  
       <div class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
         <div class="imgcontainer">
           <span onclick="document.getElementById('idSignup').style.display='none'" class="close" title="Close classLogin">&times;</span>
-          <img src="./img/logo.png" alt="Avatar" class="avatar">
+          <!--<img src="./img/logo.png" alt="Avatar" class="avatar" width="5" height="5">-->
         </div>
-
+    
         <div class="container">
           <center><label><b>Sign Up</b></label><br></center>
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" id="email_field"> <!--required-->
+          <label><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" id="email_field">
 
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" id="password_field" >  <!--required-->
+          <label><b>UserName</b></label>
+          <input type="text" placeholder="Enter UserName" id="user_field">
+    
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="password_field" onkeyup="validatePassword()"> 
 
+          <label><b>Confirm Password:</b></label>
+
+          <input type="password" placeholder="Confirm Password" id="confirm_password" onkeyup="validatePassword()">
+
+          <label id="password_match"></label>
+          
           <div class="btncontainer">
-
+            
             <button><a type="button" onclick="signup()">Sign up</a></button>
           </div>
-
+          
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
         </div>
-
       </div>
     </div>
 
@@ -196,6 +209,7 @@
     <!-- ============================================================================ -->
 
 
+
     <div class="forum">
       <div class="postContainer">
 
@@ -218,10 +232,6 @@
 
           </div>
         </div>
-
-
-
-
 
         <!-- <div class="post">
           <button id="newPost" type="button" name="button">Create new post!</button>
@@ -246,12 +256,12 @@
               </div>
               <button type="button" class="send_message" onclick="submitText()">Send</button>
               <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
+        
             <!-- </div>
 
           </form>
-        </div> -->
+        </div> --> 
       </div>
-
 
     <!-- ============================================================================ -->
     <!--                                   Sidebar                                    -->
@@ -282,7 +292,6 @@
               </div>
 
               <!-- <div class="container" style="background-color:#f1f1f1">
-
               </div> -->
             </form>
           </div>
@@ -351,8 +360,5 @@
   </div>
   <script src="js/slide.js"> </script>
   <script src="js/popup.js"> </script>
-
-
-
 </body>
 </html>

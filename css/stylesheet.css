@@ -344,8 +344,8 @@ span.psw {
 }
 .card_img {
   /* border: red solid 1px; */
-  width: 100%;
-  height: 10vh;
+  width: 20vw;
+  height: 25vh;
   /* border: 1px red solid; */
 }
 .card_txt {
@@ -425,6 +425,11 @@ span.psw {
 .time {
   /* border: 1px blue solid; */
   width: 80%;
+}
+
+.classCode {
+  /* border: 1px blue solid; */
+  margin-right: 1vw;
 }
 
 .postTitle {

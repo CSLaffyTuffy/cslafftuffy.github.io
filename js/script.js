@@ -176,33 +176,18 @@ function newPost() {
 
   let addLocation = document.querySelector('div.postContainer');
 
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-
-
 let today = new Date();
 let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
-let timeS = today.getHours() + ":" + today.getMinutes();
-
+let timeS = today.getHours() + ":" + ((today.getMinutes()<10?'0':'') + today.getMinutes() );
 
   let newPostContent = '<div class="post">' +
                           '<div class="postHeader">' +
                             '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' +
                             '<div class="username">Username</div>' +
-							'<div class="time"> Date: ' + date + '' + timeS + '</div> '  +
+							'<div class="time"> Date: ' + date + ' ' + timeS + '</div> '  +
 
                           '</div>' +
-                          '<h1 class="postTitle">' + 'Title: '+ postTitle + '</h1>' + 
+                          '<h1 class="postTitle">' + 'Title: '+ postTitle + '</h1>' +
 
 
 
@@ -222,8 +207,6 @@ let timeS = today.getHours() + ":" + today.getMinutes();
   console.log(newPostContent);
   addLocation.insertAdjacentHTML('afterbegin', newPostContent);
 
-  console.log("1111111111111111111");
-  console.log("1111111111111111111");
 
   // clear form
   document.querySelector('input.title').value="";

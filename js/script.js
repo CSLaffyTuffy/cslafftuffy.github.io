@@ -1,4 +1,6 @@
 
+var cUserName = "";
+
 firebase.auth().onAuthStateChanged(function(user)
 {
 
@@ -7,22 +9,27 @@ firebase.auth().onAuthStateChanged(function(user)
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    document.getElementById('idLogin').style.display='none';
+    document.getElementById('idSignup').style.display='none';
 
-    window.alert("logged in as "+user.email);
+    document.getElementById('luserName').innerHTML = cUserName;
+    document.getElementById('luserName').style.display='block';
+    //window.alert("logged in as "+user.email);
 
 	}
  	
-  else
-  	{
-  // window.alert("user?: " + user);
-    window.alert("logged out");
-    
+  else {
+
     
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
+    document.getElementById('luserName').innerHTML = '';
+    document.getElementById('luserName').style.display='none';
+    cUserName = "";
 	}
 
 });
+
 
 
 /*
@@ -119,6 +126,7 @@ function signup() {
               email: email,
             })
             .then(function() {
+              cUserName = user;
               console.log("Document successfully written!");
             })
             .catch(function(error) {
@@ -143,24 +151,69 @@ function login()
   var login = document.getElementById("elog").value
     ,userPass = document.getElementById("plog").value
     , llog = document.getElementById("llog");
+
   
   var db = firebase.firestore();
 
   var docRef = db.collection("users").doc(login);
   docRef.get().then(function(doc) {
     if (doc.exists) {
-        firebase.auth().signInWithEmailAndPassword(doc.data().email, userPass).catch(function(error){
+        firebase.auth().signInWithEmailAndPassword(doc.data().email, userPass)
+        .then(function() {
+          cUserName = login;
+        
+        })
+        .catch(function(error){
             llog.innerHTML = "Invalid Login"
         });
       } else {
-        firebase.auth().signInWithEmailAndPassword(login, userPass).catch(function(error){
+        firebase.auth().signInWithEmailAndPassword(login, userPass)
+        .then(function() {
+          //need to grab username from email somehow
+        db.collection("users").where("email", "==", login)
+          .get()
+          .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            cUserName = doc.id;
+            
+            document.getElementById('luserName').innerHTML = doc.id;
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+          //cUserName = docRef2;
+
+
+         })
+        .catch(function(error){
             llog.innerHTML = "Invalid Login"
           });
       }
-    }).catch(function(error) {
+    })
+  .catch(function(error) {
       console.log("Error getting document:", error);
   });
+
 }
+
+
+function createPostCheckLoggedIn()
+{
+  var user = firebase.auth().currentUser;
+
+  if(user){
+      document.getElementById('myId').style.display='block'
+  }
+  else{
+      document.getElementById('idLogin').style.display='block'
+  }
+
+}
+
 
 
 function logout()
@@ -188,66 +241,12 @@ function newPost() {
   
   let postTitle = document.querySelector('input.title').value;
   let postText  = document.querySelector('textarea.createText').value;
+  let postDate = getdate()
 
-  let addLocation = document.querySelector('div.postContainer');
-  
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
-  console.log("newPost run");
- 
-
-let today = new Date();
-let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
-let timeS = today.getHours() + ":" + today.getMinutes();
-
-
-  let newPostContent = '<div class="post">' + 
-                          '<div class="postHeader">' + 
-                            '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
-                            '<div class="username">Username</div>' + 
-							'<div class="time"> Date: ' + date + '' + timeS + '</div> '  + 
-							 
-                          '</div>' + 
-                          '<h1 class="postTitle">' + postTitle + '</h1>' + 
-                          
-
-                          
-                          '<div class="postContent">' + postText + '</div>' + 
-                        '</div>';
-
-
-
-
-
-
-
-
-
-  console.log(postTitle);
-  console.log(postText);
-  console.log(newPostContent);
-  addLocation.insertAdjacentHTML('afterbegin', newPostContent);
-  
-  console.log("1111111111111111111");
-  console.log("1111111111111111111");
-
-  // clear form
-  document.querySelector('input.title').value="";
-  document.querySelector('textarea.createText').value="";
-  // Hide popup
-  let popupPost = document.getElementById('myId');
-  popupPost.style.display = 'none';
   
 }
+
+
 
 
 

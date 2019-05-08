@@ -38,12 +38,12 @@
     <!-- ============================================================================ -->
     <header class = navigation>
         <img class="logo" src="./img/logo.png" alt="logo" class="logo">
-
+	<!--
       <div class="banner">
         <h1>Laffytuffy</h1>
-      </div>
+      </div> -->
 
-      <nav class="nav">       <!-- width: 50% -->
+     <nav class="nav">       <!-- width: 50% -->
         <ul class="nav-links">
           <li><a href="#">Laffytuffy</a></li>
         </ul>
@@ -55,6 +55,7 @@
           <button type="submit" name="input_string" onclick ="search()">Search</button>
       </div>
       <div id="login_div" class="loggedin-div">
+      	 <h3 id = "userStyle"> User: <label id="luserName"></label></h3>
         <button onclick="logout()">Logout</button>
       </div>
 
@@ -77,71 +78,82 @@
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
-    </header>
+    </header>    
 
     <!-- ============================================================================ -->
     <!--                                    Login                                     -->
     <!-- ============================================================================ -->
     <div id="idLogin" class="classLogin">
-
-      <form class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
+  
+      <div class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
         <div class="imgcontainer">
           <span onclick="document.getElementById('idLogin').style.display='none'" class="close" title="Close classLogin">&times;</span>
           <img src="./img/logo.png" alt="Avatar" class="avatar">
         </div>
-
+    
         <div class="container">
           <center><label><b>Login</b></label><br></center>
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" id="elog"> <!--required-->
-
-          <label for="psw"><b>Password</b></label>
+          <label for="email"><b>Email\UserName:</b></label>
+          <input type="text" placeholder="Enter Email or UserName" name="email" id="elog"> <!--required-->
+    
+          <label for="psw"><b>Password:</b></label>
           <input type="password" placeholder="Enter Password" name="psw" id="plog">  <!--required-->
 
+          <label id="llog"></label>
+          
           <div class="btncontainer">
             <button type="button"onclick="login()">Login</button>
-
+            
           </div>
-
+          
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
         </div>
-
-      </form>
+    
+      </div>
     </div>
 
    <!-- ============================================================================ -->
     <!--                                    Sign Up                                     -->
     <!-- ============================================================================ -->
     <div id="idSignup" class="classLogin">
-
+  
       <div class="classLogin-content animate" action="" alt="login button doesn't have target yet" method="POST">
         <div class="imgcontainer">
           <span onclick="document.getElementById('idSignup').style.display='none'" class="close" title="Close classLogin">&times;</span>
-          <img src="./img/logo.png" alt="Avatar" class="avatar">
+          <!--<img src="./img/logo.png" alt="Avatar" class="avatar" width="5" height="5">-->
         </div>
-
+    
         <div class="container">
           <center><label><b>Sign Up</b></label><br></center>
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" id="email_field"> <!--required-->
+          <label><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" id="email_field">
 
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" id="password_field" >  <!--required-->
+          <label><b>UserName</b></label>
+          <input type="text" placeholder="Enter UserName" id="user_field">
+    
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="password_field" onkeyup="validatePassword()"> 
 
+          <label><b>Confirm Password:</b></label>
+
+          <input type="password" placeholder="Confirm Password" id="confirm_password" onkeyup="validatePassword()">
+
+          <label id="password_match"></label>
+          
           <div class="btncontainer">
-
+            
             <button><a type="button" onclick="signup()">Sign up</a></button>
           </div>
-
+          
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
         </div>
-
+    
       </div>
     </div>
 
@@ -195,63 +207,30 @@
     <!--                                   Forum                                      -->
     <!-- ============================================================================ -->
 
-
+    
     <div class="forum">
       <div class="postContainer">
-
+        
         <!-- <div class="forumTitle"></div> -->
 
         <div class="post">
           <div class="postHeader">
-            <img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">
+		  <img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">
             <div class="username">Username</div>
-			<div class="time">Date: </div>
-			<div id="testing"> </div>
-            <p id="testing"></p>
+            <div class="time">Date: </div>
           </div>
 
-          <h1 class="postTitle"> How to protect your privacy in Windows 10 </h1>
+          <h1 class="postTitle"> Title: One thousand & one reason why should you vote for our Team</h1> 
 
-
-          <div class="postContent">
-            There has been some concern that Windows 10 gathers too much private information from users. Whether you think Microsoft's operating system crosses the privacy line or just want to make sure you protect as much of your personal life as possible, we're here to help. Here's how to protect your privacy in just a few minutes.
-
+          
+          <div class="postContent"> 
+            The degree program for the Bachelor of Science in Computer Science assumes 
+			that students have already obtained a working knowledge of personal 
+			computing fundamentals and applications, including word processing, 
+			spreadsheets, database systems, e-mail systems and presentation graphics.
           </div>
         </div>
-
-
-
-
-
-        <!-- <div class="post">
-          <button id="newPost" type="button" name="button">Create new post!</button>
-          <form class="createPost" action="index.html" method="post">
-            <h5>Title </h5>
-          </form>
-
-          <!-- image handler -->
-          <!-- <input type="file" onchange="previewFile()"><br>
-          <img src="" height="200" alt="Image preview...">
-
-          <!-- text posted -->
-          <!-- <form class="entry" type="text" method="post">
-            <div class="output_text_area">
-              <textarea id="output_text" readonly name="output" rows="15"></textarea>
-            </div>
-
-            <div class="input_area">
-              <button type="button" class="clear_history" onclick="clearHistory()">Clear History</button>
-              <div class="input_text_area">
-                <textarea id="input_text" name="input" rows="2"></textarea>
-              </div>
-              <button type="button" class="send_message" onclick="submitText()">Send</button>
-              <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
-            <!-- </div>
-
-          </form>
-        </div> -->
       </div>
-
 
     <!-- ============================================================================ -->
     <!--                                   Sidebar                                    -->
@@ -260,7 +239,7 @@
       <div class="sidebar">
         <div class="article1">
           <img class="sizebarImg" src="img/Sidebar/Background/school.png" alt="background">
-          <button onclick="document.getElementById('myId').style.display='block'" class ="button"> Create your post </button>
+          <button onclick="createPostCheckLoggedIn()" class ="button"> Create your post </button>
           <div id="myId" class="setBox">
             <form class="modal-content animate" action="/action_page.php">
               <div class="imgcontainer">
@@ -270,6 +249,9 @@
               <div class="container">
                 <label for="subject"><h3>Title</h3></label>
                 <input class="title" type="text" placeholder="Enter your title" value="">
+
+                <label for="classNum"><h3>Class Number</h3></label>
+                <input class="title" type="text" placeholder="Enter Class Number" value="">
 
                 <label for="post"><h3>Your post</h3></label>
                 <textarea class="createText" placeholder="Enter your post" value=""> </textarea>
@@ -282,7 +264,7 @@
               </div>
 
               <!-- <div class="container" style="background-color:#f1f1f1">
-
+                
               </div> -->
             </form>
           </div>
@@ -351,8 +333,5 @@
   </div>
   <script src="js/slide.js"> </script>
   <script src="js/popup.js"> </script>
-
-
-
 </body>
 </html>

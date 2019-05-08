@@ -17,8 +17,8 @@ header {
 }
 /*
   ============================================================================
-                                  Navigation bar
-  ============================================================================
+                                  Navigation bar                              
+  ============================================================================  
 */
 
   .navigation {
@@ -98,11 +98,10 @@ nav {
   font-weight: bold;
   font-size: 1.5em;
   transition: 0s;
-
 }
 .nav-links a:hover {
-  color: black;
-  border: 2px black solid;
+  color: rgb(73,169,251);
+  border: 2px rgb(73,169,251) solid;
   transition: 0.3s;
   padding: 2px;
 }
@@ -110,9 +109,6 @@ nav {
   width: 20%;
   height: 4vh;
   display: flex;
-  /* justify-content:space-around;. */
-  /* border: 1px skyblue solid; */
-  /* align-items: flex-end; */
 }
 .search_input {
   width: 70%;
@@ -121,8 +117,6 @@ nav {
 }
 .login_signup {
   display: flex;
-  /* border: black 1px solid; */
-  /* width: 30%; */
   align-items: center;
 }
 
@@ -151,10 +145,28 @@ select {
   margin: 5px;
 }
 
+#luserName {
+  text-decoration: none;
+  color: rgb(73,169,251);
+  letter-spacing: 2px;
+  font-weight: lighter;
+  font-size: 1em;
+  transition: 0s;
+  margin-left: 5px;
+}
+
+#userStyle {
+  display:flex;
+  color: rgb(73,169,251);
+  font-weight: lighter;
+  font-size: 1em;
+  transition: 0s;
+}
+
 /*
   ============================================================================
-                                  Login
-  ============================================================================
+                                  Login                              
+  ============================================================================  
 */
 
 /* The classLogin (background) */
@@ -190,7 +202,7 @@ select {
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
-
+  
 }
 
 /* Full-width input fields */
@@ -227,7 +239,7 @@ input[type=text], input[type=password] {
   text-decoration: none;
   color: white;
   /* padding: 9% 36% 9% 36%; */
-
+  
 }
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -291,12 +303,12 @@ span.psw {
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
+  from {-webkit-transform: scale(0)} 
   to {-webkit-transform: scale(1)}
 }
-
+  
 @keyframes animatezoom {
-  from {transform: scale(0)}
+  from {transform: scale(0)} 
   to {transform: scale(1)}
 }
 
@@ -313,8 +325,8 @@ span.psw {
 
 /*
   ============================================================================
-                                  Popular Courses
-  ============================================================================
+                                  Popular Courses                              
+  ============================================================================  
 */
 .popular_courses {
   margin-top: 1vh;
@@ -354,8 +366,8 @@ span.psw {
 
 /*
 ============================================================================
-                                   Forum
-============================================================================
+                                   Forum                                     
+============================================================================ 
 */
 
 .forum {
@@ -363,24 +375,16 @@ span.psw {
   display:flex;
   justify-content: space-between;
   margin-top: 5vh;
-  /* padding: 5px; */
-  /* border: 1px purple solid; */
-  background-color: #f8f9fb; /* Fallback color */
+  background-color: #f8f9fb; 
   background-color: +100%;
 
 }
 .postContainer {
   margin: 0px;
-  /* border: 1px red solid; */
   width: 100%;
   display: block;
-  /* margin: auto; */
 }
 .forumTitle {
-  /* text-transform: uppercase;
-  margin: auto;
-  display: block;
-  text-align: center; */
   border: 1px red solid;
   width: 100%;
   height: 5vh;
@@ -389,15 +393,10 @@ span.psw {
 .post {
   width : 94%;
   border: 1px #49a9fb solid;
-  /* background-color: #555; */
   margin: 0vh auto 5vh auto;
   background-color: white;
   border-radius: 15px;
-  /* border-top-right-radius: 15px;
-  border-bottom-ra
-  border-bottom-radius: 15px; */
   display: block;
-
 }
 .postHeader {
   border-bottom: 1px #49a9fb solid;
@@ -407,7 +406,6 @@ span.psw {
   align-items: center;
 }
 .usrLogo {
-  /* border: 1px green solid; */
   align-self: center;
   width: 4%;
   margin: 0.5%;
@@ -415,14 +413,13 @@ span.psw {
   border-bottom-right-radius: 10px;
 }
 .username {
-  /* border: 1px red solid; */
   align-content: center;
   width: 50%;
 }
 .time {
-  /* border: 1px blue solid; */
   width: 80%;
 }
+
 .postTitle {
   text-indent: 1ch;
   margin-bottom: 1vh;
@@ -452,8 +449,6 @@ textarea {
 .input_area {
   display: flex;
   justify-content: space-between;
-  /* background-color: yellow; */
-  /* align-content: center; */
   width: 100%;
 
 }
@@ -461,12 +456,7 @@ textarea {
   width: 70%;
 }
 .input_text_area textarea {
-
   width: 100%;
-  /* height: 100%; */
-  /* text-indent: 5px; */
-  /* background-color: green; */
-  /* margin: auto; */
 }
 .input_area button{
   width: 20%;
@@ -479,13 +469,10 @@ textarea {
 }
 .sidebar{
   width :29%;
-  /* border: red solid 1px; */
-  /* background-color: purple; */
 }
 
 .article{
   height :25%;
-  /* background-color: blue; */
 }
 
 

@@ -1,4 +1,6 @@
 
+var cUserName = "";
+
 firebase.auth().onAuthStateChanged(function(user)
 {
 
@@ -7,36 +9,37 @@ firebase.auth().onAuthStateChanged(function(user)
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    document.getElementById('idLogin').style.display='none';
+    document.getElementById('idSignup').style.display='none';
 
-    window.alert("logged in as "+user.email);
+    document.getElementById('luserName').innerHTML = cUserName;
+    document.getElementById('luserName').style.display='block';
+    //window.alert("logged in as "+user.email);
 
 	}
+ 	
+  else {
 
-  else
-  	{
-  // window.alert("user?: " + user);
-    window.alert("logged out");
-
-
+    
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
+    document.getElementById('luserName').innerHTML = '';
+    document.getElementById('luserName').style.display='none';
+    cUserName = "";
 	}
-
 
 });
 
 
 
-
-
 /*
   ============================================================================
-                                  Login
-  ============================================================================
+                                  Login                              
+  ============================================================================  
 */
 
 function loginPopup() {
-
+  
 
   var idLoginVar = document.getElementById('idLogin');
   // idLoginVar.style.display = "block";
@@ -51,21 +54,19 @@ function loginPopup() {
       }
     }
   }
-
+  
 }
-
 
 
 
 /*
   ============================================================================
-                                  Sign Up
-  ============================================================================
+                                  Sign Up                            
+  ============================================================================  
 */
 
 function signupPopup()
 {
-
   var idLoginVar = document.getElementById('idSignup');
   // idLoginVar.style.display = "block";
   if(window.getComputedStyle(idLoginVar).display === "none") {
@@ -84,57 +85,135 @@ function signupPopup()
 }
 
 //Handles the signup button
+function validatePassword(){
+  var password = document.getElementById("password_field")
+  , confirm_password = document.getElementById("confirm_password")
+  , password_match = document.getElementById("password_match");
 
-function signup()
+  if(password.value != confirm_password.value && confirm_password.value != "") {
+    password_match.innerHTML = "Passwords Do Not Match!";
+  } else {
+    password_match.innerHTML = "";
+  }
+}
+
+function signup() {
+  var email = document.getElementById("email_field").value
+  , user = document.getElementById("user_field").value
+  , password = document.getElementById("password_field").value
+  , confirm_password = document.getElementById("confirm_password").value;
+
+  var db = firebase.firestore();
+
+  if (user == ""){
+    password_match.innerHTML = "Enter a Username";
+  }
+  else if (!(/^[a-zA-Z0-9]+$/).test( user )){
+    password_match.innerHTML = "Username is Not AlphaNumeric";
+  }
+  else{
+    var docRef = db.collection("users").doc(user);
+    docRef.get().then(function(doc) {
+      if (doc.exists) {
+        password_match.innerHTML = "Username Already Taken";
+      } else {
+        if(password != confirm_password) {
+          password_match.innerHTML = "Passwords Do Not Match";
+        } else {
+          firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+            document.getElementById('idSignup').style.display='none'
+            db.collection("users").doc(user).set({
+              email: email,
+            })
+            .then(function() {
+              cUserName = user;
+              console.log("Document successfully written!");
+            })
+            .catch(function(error) {
+              console.error("Error writing document: ", error);
+            });
+          }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        
+            password_match.innerHTML = errorMessage;
+          });
+        }
+      }
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+    });
+  }
+}
+
+function login()
 {
+  var login = document.getElementById("elog").value
+    ,userPass = document.getElementById("plog").value
+    , llog = document.getElementById("llog");
 
-var userEmail = document.getElementById("email_field").value;
-var userPass = document.getElementById("password_field").value;
+  
+  var db = firebase.firestore();
+
+  var docRef = db.collection("users").doc(login);
+  docRef.get().then(function(doc) {
+    if (doc.exists) {
+        firebase.auth().signInWithEmailAndPassword(doc.data().email, userPass)
+        .then(function() {
+          cUserName = login;
+        
+        })
+        .catch(function(error){
+            llog.innerHTML = "Invalid Login"
+        });
+      } else {
+        firebase.auth().signInWithEmailAndPassword(login, userPass)
+        .then(function() {
+          //need to grab username from email somehow
+        db.collection("users").where("email", "==", login)
+          .get()
+          .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            cUserName = doc.id;
+            
+            document.getElementById('luserName').innerHTML = doc.id;
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+          //cUserName = docRef2;
 
 
-
-firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error)
-  {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-
-
-
-
-  window.alert("Error :" + errorMessage);
+         })
+        .catch(function(error){
+            llog.innerHTML = "Invalid Login"
+          });
+      }
+    })
+  .catch(function(error) {
+      console.log("Error getting document:", error);
   });
 
 }
 
 
-
-
-
-
-function login()
+function createPostCheckLoggedIn()
 {
+  var user = firebase.auth().currentUser;
 
-window.alert("Logging in...");
-var userEmail = document.getElementById("elog").value;
-var userPass = document.getElementById("plog").value;
-
-
-
-	firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error)
-	{
-  	// Handle Errors here.
-  	var errorCode = error.code;
-  	var errorMessage = error.message;
-
-
-
-
-  window.alert("Error :" + errorMessage);
-    });
-
+  if(user){
+      document.getElementById('myId').style.display='block'
+  }
+  else{
+      document.getElementById('idLogin').style.display='block'
+  }
 
 }
+
 
 
 function logout()
@@ -149,32 +228,21 @@ window.alert("Logged out");
 
 /*
   ============================================================================
-                                  Forum
-  ============================================================================
+                                  Forum                              
+  ============================================================================  
 */
 
 /*
   ============================================================================
-                                  postContainer
-  ============================================================================
+                                  postContainer                              
+  ============================================================================  
 */
-
-
-
-
-
-
-
-
-
-
-
 function newPost() {
+  
+let postTitle = document.querySelector('input.title').value;
+let postText  = document.querySelector('textarea.createText').value;
 
-  let postTitle = document.querySelector('input.title').value;
-  let postText  = document.querySelector('textarea.createText').value;
-
-  let addLocation = document.querySelector('div.postContainer');
+let addLocation = document.querySelector('div.postContainer');
 
 let today = new Date();
 let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
@@ -183,7 +251,7 @@ let timeS = today.getHours() + ":" + ((today.getMinutes()<10?'0':'') + today.get
   let newPostContent = '<div class="post">' +
                           '<div class="postHeader">' +
                             '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' +
-                            '<div class="username">Username</div>' +
+                            '<div class="username">' + luserName+ '</div>' +
 							'<div class="time"> Date: ' + date + ' ' + timeS + '</div> '  +
 
                           '</div>' +
@@ -215,9 +283,8 @@ let timeS = today.getHours() + ":" + ((today.getMinutes()<10?'0':'') + today.get
   let popupPost = document.getElementById('myId');
   popupPost.style.display = 'none';
 
+  
 }
-
-
 
 
 let time = {
@@ -282,7 +349,7 @@ function clearHistory() {
 
 // start
 function newArticle(){
-
+  
 }
 
 // Image handles

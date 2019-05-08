@@ -51,7 +51,7 @@
       </nav>
 
       <div class="search">        <!-- width: 20%; -->
-          <input class="search_input" type="search" placeholder="Search">
+          <input id="searchBar" class="search_input" type="search" placeholder="Enter Class Number">
           <button type="submit" name="input_string" onclick ="search()">Search</button>
       </div>
       <div id="login_div" class="loggedin-div">
@@ -148,9 +148,9 @@
             <button><a type="button" onclick="signup()">Sign up</a></button>
           </div>
           
-          <label>
+          <!--<label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+          </label>-->
         </div>
       </div>
     </div>
@@ -162,7 +162,7 @@
       <h1>Popular Courses</h1>
       <div class="card">
         <div >
-            <img class="card_img" src="./img/os.jpg">
+            <img class="card_img" src="./img/os.jpg" onclick="search(351)">
         </div>
         <div class="card_txt">
           <h3>CPSC 351</h3>
@@ -172,7 +172,7 @@
 
       <div class="card">
         <div >
-            <img class="card_img" src="./img/se.jpg">
+            <img class="card_img" src="./img/se.jpg" onclick="search(362)">
         </div>
         <div class="card_txt">
           <h3>CPSC 362</h3>
@@ -182,7 +182,7 @@
 
       <div class="card">
         <div >
-            <img class="card_img" src="./img/database.jpg">
+            <img class="card_img" src="./img/database.jpg" onclick="search(332)">
         </div>
         <div class="card_txt">
           <h3>CPSC 332</h3>
@@ -192,7 +192,7 @@
 
       <div class="card">
         <div >
-            <img class="card_img" src="./img/opensource.png">
+            <img class="card_img" src="./img/opensource.png" onclick="search(254)">
         </div>
         <div class="card_txt">
           <h3>CPSC 254</h3>
@@ -216,17 +216,18 @@
           <div class="postHeader">
             <img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">
             <div class="username">Username</div>
-			<div class="time">Date: </div>
-      <div class="classCode">test</div> 
+			<div class="time">Date: Today</div>
+      <div class="classCode">LOL</div> 
 			<div id="testing"> </div>
             <p id="testing"></p>
           </div>
 
-          <h1 class="postTitle"> How to protect your privacy in Windows 10 </h1>
+          <h1 class="postTitle"> How to Create a Post </h1>
 
 
           <div class="postContent">
-            There has been some concern that Windows 10 gathers too much private information from users. Whether you think Microsoft's operating system crosses the privacy line or just want to make sure you protect as much of your personal life as possible, we're here to help. Here's how to protect your privacy in just a few minutes.
+            Click the Create Post Button on the RIGHT.
+            Class Number must be a NUMBER.
 
           </div>
         </div>
@@ -278,6 +279,9 @@
               <div class="container">
                 <label for="subject"><h3>Title</h3></label>
                 <input class="title" type="text" placeholder="Enter your title" value="">
+
+                <label for="post"><h3>Class Number</h3></label>
+                <input class="title" id ="inputClass" type="text" placeholder="Enter your Class Number" value="">
 
                 <label for="post"><h3>Your post</h3></label>
                 <textarea class="createText" placeholder="Enter your post" value=""> </textarea>

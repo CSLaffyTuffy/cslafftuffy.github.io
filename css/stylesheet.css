@@ -7,6 +7,8 @@
   display: flex;
   flex-wrap: wrap;
   /* border: 1px red solid; */
+  background-color: #f8f9fb; /* Fallback color */
+
 }
 
 header {
@@ -155,8 +157,8 @@ select {
   ============================================================================  
 */
 
-/* The Modal (background) */
-.modal {
+/* The classLogin (background) */
+.classLogin {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -174,8 +176,8 @@ select {
   } */
 }
 
-/* Modal Content/Box */
-.modal-content {
+/* classLogin Content/Box */
+.classLogin-content {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
@@ -202,20 +204,31 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-.modal button {
+.classLogin button {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  /* padding: 14px 20px; */
+  /* margin: 8px 0; */
+  width: 20px;
+  height: 50px;
   border: none;
   cursor: pointer;
   width: 100%;
 }
 
-.modal button:hover {
+.classLogin button:hover {
   opacity: 0.8;
 }
-
+.btncontainer a {
+/*   border: solid red 1px; */
+  /* width: 100%; */
+  /* height: 100%; */
+  padding: 15px 80px;
+  text-decoration: none;
+  color: white;
+  /* padding: 9% 36% 9% 36%; */
+  
+}
 /* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;
@@ -304,18 +317,19 @@ span.psw {
   ============================================================================  
 */
 .popular_courses {
-  margin-top: 2vh;
+  margin-top: 1vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
+  background-color: white;
   /* border: black 1px solid; */
 }
 .popular_courses h1 {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 .card {
   display: flex;
@@ -338,17 +352,92 @@ span.psw {
   width: 100%;
 }
 
-/*========================================*/
-.fourm {
+/*
+============================================================================
+                                   Forum                                     
+============================================================================ 
+*/
+
+.forum {
   width: 100%;
   display:flex;
   justify-content: space-between;
-  padding: 5px;
+  margin-top: 5vh;
+  /* padding: 5px; */
+  /* border: 1px purple solid; */
+  background-color: #f8f9fb; /* Fallback color */
+  background-color: +100%;
+
+}
+.postContainer {
+  margin: 0px;
+  /* border: 1px red solid; */
+  width: 100%;
+  display: block;
+  /* margin: auto; */
+}
+.forumTitle {
+  /* text-transform: uppercase;
+  margin: auto;
+  display: block;
+  text-align: center; */
+  border: 1px red solid;
+  width: 100%;
+  height: 5vh;
+  margin-top: 1000px;
 }
 .post {
-  width : 69%;
-  /* border: 1px blue solid; */
+  width : 94%;
+  border: 1px blue solid;
   /* background-color: #555; */
+  margin: 0vh auto 5vh auto;
+  background-color: white;
+  border-radius: 15px;
+  /* border-top-right-radius: 15px;
+  border-bottom-ra
+  border-bottom-radius: 15px; */
+  display: block;
+  
+}
+.postHeader {
+  border-bottom: 1px blue solid;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.usrLogo {
+  border: 1px green solid;
+  align-self: center;
+  width: 4%;
+  margin: 0.5%;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.username {
+  /* border: 1px red solid; */
+  align-content: center;
+  width: 50%;
+}
+.time {
+  /* border: 1px blue solid; */
+  width: 80%;
+}
+
+.postTitle {
+  text-indent: 1ch;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+.postImg {
+  border: 1px blue solid;
+  display: block;
+  margin: auto;
+  max-width: 60%;
+}
+.postContent {
+  display: inline-block;
+  margin: 1em;
 }
 textarea {
   /* border-radius: 10px; */

@@ -120,6 +120,11 @@ nav {
   text-indent: 3px;
 
 }
+
+.userShow{
+  color: rgb(73,169,251);
+}
+
 .login_signup {
   display: flex;
   /* border: black 1px solid; */

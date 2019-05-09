@@ -161,7 +161,7 @@ function login()
         });
       } else {
         firebase.auth().signInWithEmailAndPassword(login, userPass).then(function() {
-          localStorage.setItem("username", login);
+          getUser(login)
         }).catch(function(error){
             llog.innerHTML = "Invalid Login"
           });
@@ -179,7 +179,18 @@ window.alert("Logged out");
 
 }
 
+function getUser(email){
+  let db = firebase.firestore();
 
+  db.collection("users").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      if (doc.get("email") == email) {
+        localStorage.setItem("username", doc.id);
+        document.getElementById("userShow").innerHTML = "<b>" + localStorage.getItem("username") + "</b>";
+      }
+    });
+});
+}
 
 /*
   ============================================================================

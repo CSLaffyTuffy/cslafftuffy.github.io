@@ -248,6 +248,7 @@ let today = new Date();
 let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
 let timeS = today.getHours() + ":" + ((today.getMinutes()<10?'0':'') + today.getMinutes() );
 
+
   let newPostContent = '<div class="post">' +
                           '<div class="postHeader">' +
                             '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' +

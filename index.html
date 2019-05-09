@@ -55,7 +55,6 @@
           <button type="submit" name="input_string" onclick ="search()">Search</button>
       </div>
       <div id="login_div" class="loggedin-div">
-      	 <h3 id = "userStyle"> User: <label id="luserName"></label></h3>
         <button onclick="logout()">Logout</button>
       </div>
 
@@ -63,16 +62,18 @@
         <button onclick="loginPopup()">log in</button>
         <button onclick="signupPopup()">Sign Up</button>
       </div>
+	  
+	  <div class="login_signup" id="user_div">
+      	<label id="luserName"></label>
+	  </div>
+	 
       <div class="drop_down">
         <img src="./img/user.png" alt="">
         <select id="selection" name="">
-          <option></option>
-          <option value="">o</option>
-          <option value="">o</option>
-          <option value="">o</option>
+          
         </select>
       </div>
-
+		
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>

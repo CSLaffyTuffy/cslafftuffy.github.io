@@ -396,7 +396,7 @@ span.psw {
 }
 .post {
   width : 94%;
-  border: 1px blue solid;
+  border: 1px #49a9fb solid;
   /* background-color: #555; */
   margin: 0vh auto 5vh auto;
   background-color: white;
@@ -408,14 +408,14 @@ span.psw {
   
 }
 .postHeader {
-  border-bottom: 1px blue solid;
+  border-bottom: 1px #49a9fb solid;
   width: 100%;
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
 }
 .usrLogo {
-  border: 1px green solid;
+  /*border: 1px green solid;*/
   align-self: center;
   width: 4%;
   margin: 0.5%;

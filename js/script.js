@@ -242,7 +242,7 @@ function newPost() {
 
   let today = new Date();
   let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
-  let timeS = today.getHours() + ":" + today.getMinutes();
+  let timeS = today.getHours() + ":" + ((today.getMinutes()<10?'0':'') + today.getMinutes() );
   var login = localStorage.getItem("username");
 
   let newPostContent = '<div class="post">' + 

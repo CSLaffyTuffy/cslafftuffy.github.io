@@ -7,6 +7,8 @@ firebase.auth().onAuthStateChanged(function(user)
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    document.getElementById('idLogin').style.display='none'
+    document.getElementById("userShow").innerHTML = "<b>" + localStorage.getItem("username") + "</b>";
 
     //window.alert("logged in as "+user.email);
 
@@ -20,6 +22,8 @@ firebase.auth().onAuthStateChanged(function(user)
     
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
+    localStorage.setItem("username", "");
+    document.getElementById("userShow").innerHTML = "<b><----------</b>";
 	}
 
 });
@@ -114,6 +118,7 @@ function signup() {
           password_match.innerHTML = "Passwords Do Not Match";
         } else {
           firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+            localStorage.setItem("username", user);
             document.getElementById('idSignup').style.display='none'
             db.collection("users").doc(user).set({
               email: email,
@@ -150,15 +155,13 @@ function login()
   docRef.get().then(function(doc) {
     if (doc.exists) {
         firebase.auth().signInWithEmailAndPassword(doc.data().email, userPass).then(function() {
-          document.getElementById('idLogin').style.display='none'
-          window.alert("Logged In");
+          localStorage.setItem("username", login);
         }).catch(function(error){
             llog.innerHTML = "Invalid Login"
         });
       } else {
         firebase.auth().signInWithEmailAndPassword(login, userPass).then(function() {
-          document.getElementById('idLogin').style.display='none'
-          window.alert("Logged In");
+          localStorage.setItem("username", login);
         }).catch(function(error){
             llog.innerHTML = "Invalid Login"
           });
@@ -172,7 +175,6 @@ function login()
 function logout()
 {
 firebase.auth().signOut();
-
 window.alert("Logged out");
 
 }
@@ -190,7 +192,16 @@ function loadPosts(){
   let db = firebase.firestore();
   let addLocation = document.querySelector('div.postContainer');
   var searchKey = localStorage.getItem("searchKey");
-  
+  var login = localStorage.getItem("username");
+  var userShow = document.getElementById("userShow");
+
+  if (login == ""){
+    userShow.innerHTML = "<b><----------</b>";
+  }
+  else {
+    userShow.innerHTML = "<b>" + login + "</b>";
+  }
+
   db.collection("posts").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
       if (searchKey == "" || doc.get("class") == searchKey) {
@@ -221,11 +232,12 @@ function newPost() {
   let today = new Date();
   let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
   let timeS = today.getHours() + ":" + today.getMinutes();
+  var login = localStorage.getItem("username");
 
   let newPostContent = '<div class="post">' + 
                           '<div class="postHeader">' + 
                             '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
-                            '<div class="username">Username</div>' + 
+                            '<div class="username">' + login + '</div>' + 
 							              '<div class="time"> Date: ' + date + ' @ ' + timeS + '</div> ' + 
                             '<div class="classCode"> ' + postClass + '</div>' +
 							 

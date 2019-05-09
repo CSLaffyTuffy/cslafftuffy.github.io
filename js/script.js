@@ -1,4 +1,6 @@
 
+var cUserName = "";
+
 firebase.auth().onAuthStateChanged(function(user)
 {
 
@@ -7,19 +9,23 @@ firebase.auth().onAuthStateChanged(function(user)
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    document.getElementById('idLogin').style.display='none';
+    document.getElementById('idSignup').style.display='none';
 
+    document.getElementById('luserName').innerHTML = cUserName;
+    document.getElementById('luserName').style.display='block';
     //window.alert("logged in as "+user.email);
 
 	}
  	
-  else
-  	{
-  // window.alert("user?: " + user);
-   // window.alert("logged out");
-    
+  else {
+
     
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
+    document.getElementById('luserName').innerHTML = '';
+    document.getElementById('luserName').style.display='none';
+    cUserName = "";
 	}
 
 });
@@ -119,6 +125,7 @@ function signup() {
               email: email,
             })
             .then(function() {
+              cUserName = user;
               console.log("Document successfully written!");
             })
             .catch(function(error) {
@@ -149,24 +156,62 @@ function login()
   var docRef = db.collection("users").doc(login);
   docRef.get().then(function(doc) {
     if (doc.exists) {
-        firebase.auth().signInWithEmailAndPassword(doc.data().email, userPass).then(function() {
-          document.getElementById('idLogin').style.display='none'
-          window.alert("Logged In");
-        }).catch(function(error){
+        firebase.auth().signInWithEmailAndPassword(doc.data().email, userPass)
+        .then(function() {
+          cUserName = login;
+        
+        })
+        .catch(function(error){
             llog.innerHTML = "Invalid Login"
         });
       } else {
-        firebase.auth().signInWithEmailAndPassword(login, userPass).then(function() {
-          document.getElementById('idLogin').style.display='none'
-          window.alert("Logged In");
-        }).catch(function(error){
+        firebase.auth().signInWithEmailAndPassword(login, userPass)
+        .then(function() {
+          //need to grab username from email somehow
+        db.collection("users").where("email", "==", login)
+          .get()
+          .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+            cUserName = doc.id;
+            
+            document.getElementById('luserName').innerHTML = doc.id;
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+          //cUserName = docRef2;
+
+
+         })
+        .catch(function(error){
             llog.innerHTML = "Invalid Login"
           });
       }
-    }).catch(function(error) {
+    })
+  .catch(function(error) {
       console.log("Error getting document:", error);
   });
+
 }
+
+
+function createPostCheckLoggedIn()
+{
+  var user = firebase.auth().currentUser;
+
+  if(user){
+      document.getElementById('myId').style.display='block'
+  }
+  else{
+      document.getElementById('idLogin').style.display='block'
+  }
+
+}
+
 
 
 function logout()

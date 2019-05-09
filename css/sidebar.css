@@ -22,7 +22,7 @@
   width: auto;
   margin-bottom: 25px;
   border: 2px Gainsboro dashed;
-  max-height: 450px;
+  max-height: 350px;
 }
 .button {
   position: absolute;
@@ -32,7 +32,7 @@
   font-size: 25px;
   height: 60px;
   width: 23%;
-  align-self: flex-end;
+  align-self: flex-start;
   font-weight: bold;
 }
 .button:hover {

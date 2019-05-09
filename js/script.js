@@ -186,7 +186,7 @@ function getUser(email){
     querySnapshot.forEach(function(doc) {
       if (doc.get("email") == email) {
         localStorage.setItem("username", doc.id);
-        document.getElementById("userShow").innerHTML = "<b>" + localStorage.getItem("username") + "</b>";
+        document.getElementById("userShow").innerHTML = "<b>" + doc.id + "</b>";
       }
     });
 });

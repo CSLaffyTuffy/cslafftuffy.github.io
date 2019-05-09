@@ -1,6 +1,4 @@
-
-var cUserName = "";
-
+cUserName = "";
 firebase.auth().onAuthStateChanged(function(user)
 {
 
@@ -9,7 +7,8 @@ firebase.auth().onAuthStateChanged(function(user)
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
-    document.getElementById('idLogin').style.display='none';
+
+	document.getElementById('idLogin').style.display='none';
     document.getElementById('idSignup').style.display='none';
 
     document.getElementById('luserName').innerHTML = cUserName;
@@ -18,8 +17,11 @@ firebase.auth().onAuthStateChanged(function(user)
 
 	}
  	
-  else {
-
+  else
+  	{
+  // window.alert("user?: " + user);
+   // window.alert("logged out");
+    
     
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
@@ -29,7 +31,6 @@ firebase.auth().onAuthStateChanged(function(user)
 	}
 
 });
-
 
 
 /*
@@ -126,7 +127,7 @@ function signup() {
               email: email,
             })
             .then(function() {
-              cUserName = user;
+		cUserName = user;
               console.log("Document successfully written!");
             })
             .catch(function(error) {
@@ -200,7 +201,6 @@ function login()
 
 }
 
-
 function createPostCheckLoggedIn()
 {
   var user = firebase.auth().currentUser;
@@ -213,8 +213,6 @@ function createPostCheckLoggedIn()
   }
 
 }
-
-
 
 function logout()
 {
@@ -232,21 +230,91 @@ window.alert("Logged out");
   ============================================================================  
 */
 
+
+function loadPosts(){
+  let db = firebase.firestore();
+  let addLocation = document.querySelector('div.postContainer');
+  var searchKey = localStorage.getItem("searchKey");
+  
+  db.collection("posts").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      if (searchKey == "" || doc.get("class") == searchKey) {
+        addLocation.insertAdjacentHTML('afterbegin', doc.get("post"));
+      }
+    });
+});
+}
+
 /*
   ============================================================================
                                   postContainer                              
   ============================================================================  
 */
 function newPost() {
-  
+
   let postTitle = document.querySelector('input.title').value;
   let postText  = document.querySelector('textarea.createText').value;
-  let postDate = getdate()
+  let postClass  = document.getElementById("inputClass").value
 
+  let addLocation = document.querySelector('div.postContainer');
+
+  var db = firebase.firestore();
   
+  console.log("newPost run");
+ 
+
+  let today = new Date();
+  let date = today.getMonth()+1 + '/' + today.getDate() +'/'+ today.getFullYear();
+  let timeS = today.getHours() + ":" + today.getMinutes();
+
+  let newPostContent = '<div class="post">' + 
+                          '<div class="postHeader">' + 
+                            '<img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">' + 
+                            '<div class="username">Username</div>' + 
+							              '<div class="time"> Date: ' + date + ' @ ' + timeS + '</div> ' + 
+                            '<div class="classCode"> ' + postClass + '</div>' +
+							 
+                          '</div>' + 
+                          '<h1 class="postTitle">' + postTitle + '</h1>' + 
+                          
+
+                          
+                          '<div class="postContent">' + postText + '</div>' + 
+                        '</div>';
+
+
+  var currentdate = new Date(); 
+  var datetime = String(currentdate.getFullYear())
+                + String((currentdate.getMonth()+1)) 
+                + String(currentdate.getDate())
+                + String(currentdate.getHours())
+                + String(currentdate.getMinutes()) 
+                + String(currentdate.getSeconds());
+
+  db.collection("posts").doc("userame" + datetime).set({
+              post: newPostContent,
+              class: postClass,
+              stamp: datetime
+            })
+
+  console.log(postTitle);
+  console.log(postText);
+  console.log(newPostContent);
+  
+
+  // clear form
+  document.querySelector('input.title').value="";
+  document.querySelector('textarea.createText').value="";
+  // Hide popup
+  let popupPost = document.getElementById('myId');
+  popupPost.style.display = 'none';
+  if (isNaN(postClass)){
+    search("test");
+  }
+  else {
+    addLocation.insertAdjacentHTML('afterbegin', newPostContent);
+  }
 }
-
-
 
 
 
@@ -269,8 +337,11 @@ let message = {
   message_time: time,
   message_content: "message_content"
 };
-function search() {
-  console.log("Search output");
+
+
+function search(searchKey = document.getElementById("searchBar").value) {
+  localStorage.setItem("searchKey", searchKey);
+  document.location.reload();
 }
 
 let history = "";

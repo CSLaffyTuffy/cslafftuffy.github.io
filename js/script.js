@@ -361,7 +361,12 @@ function clearHistory() {
 
 // start
 function newArticle(){
-  
+  if (localStorage.getItem("username") == ""){
+    window.alert("You must Sign Up or Log In to Post.");
+  }
+  else {
+    document.getElementById('myId').style.display='block'
+  }
 }
 
 // Image handles

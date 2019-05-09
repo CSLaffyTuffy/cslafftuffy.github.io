@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="css/sidebar.css">
   <title>Laffytuffy</title>
 </head>
-<body>
+<body onload="loadPosts()";>
   <div class="main">
 
     <!-- ============================================================================ -->
@@ -45,20 +45,17 @@
 
       <nav class="nav">       <!-- width: 50% -->
         <ul class="nav-links">
-          <li><a href="#">Laffytuffy</a></li>
-          <li><a href="#">Popular</a></li>
-          <li><a href="#">All</a></li>
-          <li><a href="#">Users</a></li>
+          <li><a href=".">Laffytuffy</a></li>
         </ul>
 
       </nav>
 
       <div class="search">        <!-- width: 20%; -->
-          <input class="search_input" type="search" placeholder="Search">
+          <input id="searchBar" class="search_input" type="search" placeholder="Enter Class Number">
           <button type="submit" name="input_string" onclick ="search()">Search</button>
       </div>
       <div id="login_div" class="loggedin-div">
-      	<label id="luserName"></label>
+         <h3 id = "userStyle"> User: <label id="luserName"></label></h3>
         <button onclick="logout()">Logout</button>
       </div>
 
@@ -81,7 +78,7 @@
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
-    </header>    
+    </header>
 
     <!-- ============================================================================ -->
     <!--                                    Login                                     -->
@@ -110,9 +107,9 @@
             
           </div>
           
-          <label>
+          <!--<label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+          </label>-->
         </div>
     
       </div>
@@ -152,11 +149,10 @@
             <button><a type="button" onclick="signup()">Sign up</a></button>
           </div>
           
-          <label>
+          <!--<label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+          </label>-->
         </div>
-    
       </div>
     </div>
 
@@ -167,7 +163,7 @@
       <h1>Popular Courses</h1>
       <div class="card">
         <div >
-            <img class="card_img" src="./img/os.jpg">
+            <img class="card_img" src="./img/os.jpg" onclick="search(351)">
         </div>
         <div class="card_txt">
           <h3>CPSC 351</h3>
@@ -177,7 +173,7 @@
 
       <div class="card">
         <div >
-            <img class="card_img" src="./img/se.jpg">
+            <img class="card_img" src="./img/se.jpg" onclick="search(362)">
         </div>
         <div class="card_txt">
           <h3>CPSC 362</h3>
@@ -187,7 +183,7 @@
 
       <div class="card">
         <div >
-            <img class="card_img" src="./img/database.jpg">
+            <img class="card_img" src="./img/database.jpg" onclick="search(332)">
         </div>
         <div class="card_txt">
           <h3>CPSC 332</h3>
@@ -197,7 +193,7 @@
 
       <div class="card">
         <div >
-            <img class="card_img" src="./img/opensource.png">
+            <img class="card_img" src="./img/opensource.png" onclick="search(254)">
         </div>
         <div class="card_txt">
           <h3>CPSC 254</h3>
@@ -210,69 +206,46 @@
     <!--                                   Forum                                      -->
     <!-- ============================================================================ -->
 
-    
+
+
     <div class="forum">
       <div class="postContainer">
-        
+
         <!-- <div class="forumTitle"></div> -->
 
         <div class="post">
           <div class="postHeader">
             <img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">
             <div class="username">Username</div>
-            <div class="time">postTime</div>
+			<div class="time">Date: Today</div>
+      <div class="classCode">LOL</div> 
+			<div id="testing"> </div>
+            <p id="testing"></p>
           </div>
 
-          <h1 class="postTitle"> How to protect your privacy in Windows 10 </h1> 
-          <img class="postImg" src="./img/logo.png" alt="./img/logo.png" class="userLogo">
+          <h1 class="postTitle"> How to Create a Post </h1>
 
-          
-          <div class="postContent"> 
-            There has been some concern that Windows 10 gathers too much private information from users. Whether you think Microsoft's operating system crosses the privacy line or just want to make sure you protect as much of your personal life as possible, we're here to help. Here's how to protect your privacy in just a few minutes.
 
-          </div>
-        </div>
-        
-        <div class="post">
-          <div class="postHeader">
-            <img class="usrLogo"src="./img/logo.png" alt="./img/logo.png" class="userLogo">
-            <div class="username">Username</div>
-            <div class="time">postTime</div>
-          </div>
+          <div class="postContent">
+            Click the Create Post Button on the RIGHT.
+            Class Number must be a NUMBER.
 
-          <h1 class="postTitle"> Open-source enterprise software slinger Red Hat bravely reveals that IT bosses love open-source enterprise software </h1> 
-          <img class="postImg" src="./img/logo.png" alt="./img/logo.png" class="userLogo">
-
-          
-          <div class="postContent"> 
-            Red Hat, now a part of Big Blue, on Tuesday released its first annual survey on the State of Enterprise Open Source, a statistical snapshot of what IT leaders think about Linux, Kubernetes and the like.
-
-The upshot is entirely unsurprising, dare we say predictable, for a company that sells... open source software to enterprises. Asked to rate the importance of enterprise open source (EOS) as it pertains to their organization's enterprise infrastructure software strategy, fully 69 per cent said it's either extremely or very important. Only 1 per cent said it's not important at all.
-
-About as many of respondents say open source usage has grown within their organization in the past 12 months. Some 68 per cent said as much, with 29 per cent anticipating usage will stay the same and only 3 per cent expecting a decline.
-
-Looking a year ahead, 59 per cent see further open source growth, 39 per cent predict the level to remain the same and 2 per cent see a decrease.
           </div>
         </div>
 
-
-
-        <div class="post">
+        <!-- <div class="post">
           <button id="newPost" type="button" name="button">Create new post!</button>
           <form class="createPost" action="index.html" method="post">
             <h5>Title </h5>
           </form>
-
           <!-- image handler -->
-          <input type="file" onchange="previewFile()"><br>
+          <!-- <input type="file" onchange="previewFile()"><br>
           <img src="" height="200" alt="Image preview...">
-
           <!-- text posted -->
-          <form class="entry" type="text" method="post">
+          <!-- <form class="entry" type="text" method="post">
             <div class="output_text_area">
               <textarea id="output_text" readonly name="output" rows="15"></textarea>
             </div>
-
             <div class="input_area">
               <button type="button" class="clear_history" onclick="clearHistory()">Clear History</button>
               <div class="input_text_area">
@@ -280,10 +253,10 @@ Looking a year ahead, 59 per cent see further open source growth, 39 per cent pr
               </div>
               <button type="button" class="send_message" onclick="submitText()">Send</button>
               <!-- <input type="button" name="" value="input" onclick="submitText()"> -->
-            </div>
-
+        
+            <!-- </div>
           </form>
-        </div>
+        </div> --> 
       </div>
 
     <!-- ============================================================================ -->
@@ -293,7 +266,7 @@ Looking a year ahead, 59 per cent see further open source growth, 39 per cent pr
       <div class="sidebar">
         <div class="article1">
           <img class="sizebarImg" src="img/Sidebar/Background/school.png" alt="background">
-          <button onclick="createPostCheckLoggedIn()" class ="button"> Create your post </button>
+          <button onclick="document.getElementById('myId').style.display='block'" class ="button"> Create your post </button>
           <div id="myId" class="setBox">
             <form class="modal-content animate" action="/action_page.php">
               <div class="imgcontainer">
@@ -304,8 +277,8 @@ Looking a year ahead, 59 per cent see further open source growth, 39 per cent pr
                 <label for="subject"><h3>Title</h3></label>
                 <input class="title" type="text" placeholder="Enter your title" value="">
 
-                <label for="classNum"><h3>Class Number</h3></label>
-                <input class="title" type="text" placeholder="Enter Class Number" value="">
+                <label for="post"><h3>Class Number</h3></label>
+                <input class="title" id ="inputClass" type="text" placeholder="Enter your Class Number" value="">
 
                 <label for="post"><h3>Your post</h3></label>
                 <textarea class="createText" placeholder="Enter your post" value=""> </textarea>
@@ -318,7 +291,6 @@ Looking a year ahead, 59 per cent see further open source growth, 39 per cent pr
               </div>
 
               <!-- <div class="container" style="background-color:#f1f1f1">
-                
               </div> -->
             </form>
           </div>

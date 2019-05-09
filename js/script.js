@@ -8,7 +8,7 @@ firebase.auth().onAuthStateChanged(function(user)
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
     document.getElementById('idLogin').style.display='none'
-    document.getElementById("userShow").innerHTML = "<b>" + localStorage.getItem("username") + "</b>";
+    document.getElementById("userShow").innerHTML = "<b>User: " + localStorage.getItem("username") + "</b>";
 
     //window.alert("logged in as "+user.email);
 
@@ -186,7 +186,7 @@ function getUser(email){
     querySnapshot.forEach(function(doc) {
       if (doc.get("email") == email) {
         localStorage.setItem("username", doc.id);
-        document.getElementById("userShow").innerHTML = "<b>" + doc.id + "</b>";
+        document.getElementById("userShow").innerHTML = "<b>User: " + doc.id + "</b>";
       }
     });
 });
@@ -210,7 +210,7 @@ function loadPosts(){
     userShow.innerHTML = "<b><----------</b>";
   }
   else {
-    userShow.innerHTML = "<b>" + login + "</b>";
+    userShow.innerHTML = "<b>User: " + login + "</b>";
   }
 
   db.collection("posts").get().then(function(querySnapshot) {
